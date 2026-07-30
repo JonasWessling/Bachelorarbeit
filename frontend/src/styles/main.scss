@@ -1,0 +1,71 @@
+// Import variables and mixins first
+@use "sass:meta";
+@use 'variables.scss';
+@use 'mixins.scss';
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  // Light mode (default)
+  --bg-primary: #{variables.$light-bg-primary};
+  --bg-secondary: #{variables.$light-bg-secondary};
+  --bg-tertiary: #{variables.$light-bg-tertiary};
+  --text-primary: #{variables.$light-text-primary};
+  --text-secondary: #{variables.$light-text-secondary};
+  --border-color: #{variables.$light-border};
+  --navbar-bg: #{variables.$light-navbar-bg};
+  --navbar-text: #{variables.$light-bg-primary};
+  --hover: #{variables.$light-hover};
+
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --line-height: 1.5;
+}
+
+body {
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+#root {
+  background-color: var(--bg-primary);
+  margin-left: 15%;
+  margin-right: 15%;
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+body.dark-mode {
+  --bg-primary: #{variables.$dark-bg-primary};
+  --bg-secondary: #{variables.$dark-bg-secondary};
+  --bg-tertiary: #{variables.$dark-bg-tertiary};
+  --text-primary: #{variables.$dark-text-primary};
+  --text-secondary: #{variables.$dark-text-secondary};
+  --border-color: #{variables.$dark-border};
+  --navbar-bg: #{variables.$light-navbar-bg};
+  --navbar-text: #{variables.$dark-text-primary};
+  --hover: #{variables.$dark-hover};
+}
+
+.content-padding {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+// Import all component styles
+@include meta.load-css('components/login.scss');
+@include meta.load-css('components/navbar.scss');
+@include meta.load-css('components/button.scss');
+@include meta.load-css('components/dropdown.scss');

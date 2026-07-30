@@ -1,0 +1,85 @@
+@use "sass:color";
+@use '../variables.scss';
+@use '../mixins.scss';
+
+.navbar {
+  background-color: var(--navbar-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  gap: variables.$spacing-lg;
+  height: 80px;
+
+
+  .navbar-brand {
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    
+    a {
+      text-decoration: none;
+      color: var(--navbar-text);
+      font-size: variables.$font-size-lg;
+      transition: color variables.$transition-duration variables.$transition-timing;
+
+      &:hover {
+        color: variables.$color-muted-teal;
+      }
+    }
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: end;
+  }
+
+  .navbar-item {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 variables.$spacing-lg;
+      color: var(--navbar-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color variables.$transition-duration variables.$transition-timing;
+
+      &:hover {
+        background-color: color.adjust(variables.$color-primary, $lightness: -10%);
+      }
+    }
+  }
+
+  .navbar-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    cursor: pointer;
+    padding: variables.$spacing-md;
+    margin-right: 24px;
+    transition: color variables.$transition-duration variables.$transition-timing;
+
+    &:hover {
+      color: variables.$color-muted-teal;
+    }
+
+    svg {
+      font-size: 24px;
+    }
+  }
+}

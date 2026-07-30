@@ -1,0 +1,79 @@
+@use "variables";
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Responsive media queries
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: variables.$breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media (min-width: variables.$breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media (min-width: variables.$breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (min-width: variables.$breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line truncate
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Box shadow
+@mixin box-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin box-shadow-lg {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+// Transitions
+@mixin transition($property: all) {
+  transition: $property variables.$transition-duration variables.$transition-timing;
+}
+
+// Hover state
+@mixin hover-effect {
+  @include transition;
+  
+  &:hover {
+    transform: translateY(-2px);
+    @include box-shadow;
+  }
+}

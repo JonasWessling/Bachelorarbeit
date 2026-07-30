@@ -1,0 +1,142 @@
+@use '../variables.scss';
+
+// ===== DROPDOWN BASE STYLES =====
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__trigger {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    padding: variables.$spacing-md variables.$spacing-lg;
+    font-size: variables.$font-size-base;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: variables.$spacing-sm;
+    transition: color variables.$transition-duration variables.$transition-timing;
+    border-radius: variables.$border-radius;
+    white-space: nowrap;
+
+    &:hover {
+      color: variables.$color-muted-teal;
+    }
+
+    &:focus {
+      outline: none;
+      color: variables.$color-muted-teal;
+    }
+
+    svg,
+    i {
+      font-size: 18px;
+      transition: transform variables.$transition-duration variables.$transition-timing;
+    }
+
+    &.is-open svg,
+    &.is-open i {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: variables.$border-radius-lg;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: variables.$spacing-sm 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity variables.$transition-duration variables.$transition-timing,
+                visibility variables.$transition-duration variables.$transition-timing,
+                transform variables.$transition-duration variables.$transition-timing;
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+
+    button,
+    a {
+      display: flex;
+      align-items: center;
+      gap: variables.$spacing-sm;
+      width: 100%;
+      padding: variables.$spacing-md variables.$spacing-lg;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: variables.$font-size-base;
+      cursor: pointer;
+      transition: background-color variables.$transition-duration variables.$transition-timing,
+                  color variables.$transition-duration variables.$transition-timing;
+      text-align: left;
+
+      &:hover {
+        background-color: var(--bg-secondary);
+        color: variables.$color-primary;
+      }
+
+      &:active,
+      &.is-active {
+        background-color: var(--bg-tertiary);
+        color: variables.$color-primary;
+        font-weight: 600;
+      }
+
+      svg,
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: variables.$spacing-sm 0;
+  }
+}
+
+// ===== NAVBAR-SPECIFIC DROPDOWN VARIANT =====
+.navbar {
+  .dropdown__trigger {
+    padding: 0 variables.$spacing-lg;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(0, 169, 165, 0.1);
+    }
+  }
+
+  .dropdown__menu {
+    right: 0;
+    top: calc(100% - 1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ===== LANGUAGE SWITCHER SPECIFIC =====
+.language-switcher {
+  display: flex;
+  align-items: center;
+}

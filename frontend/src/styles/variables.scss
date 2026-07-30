@@ -1,0 +1,68 @@
+// ===== SEMANTIC COLOR PALETTE =====
+$color-primary: rgba(0, 169, 165, 0.9);
+$color-secondary: #6c757d;
+$color-danger: #dc3545;
+$color-success: #28a745;
+$color-warning: #ffc107;
+$color-info: #17a2b8;
+
+// Brand/Accent colors
+$color-jet-black: #263D42;
+$dark-slate-grey: #0B5351;
+$light-sea-green: #00A9A5;
+$air-force-blue: #4E8098;
+$color-lavender-mist: #F6F2FF;
+$color-muted-teal: #81A094;
+
+// ===== LIGHT MODE PALETTE =====
+$light-bg-primary: #ffffff;
+$light-bg-secondary: #dadada;
+$light-bg-tertiary: #e9ecef;
+$light-text-primary: #212529;
+$light-text-secondary: #6c757d;
+$light-border: #dee2e6;
+$light-navbar-bg: #0B5351;
+$light-hover: #00A9A5E5;
+
+// ===== DARK MODE PALETTE =====
+$dark-bg-primary: #2d2d2d;
+$dark-bg-secondary: #343434;
+$dark-bg-tertiary: #3d3d3d;
+$dark-text-primary: #e0e0e0;
+$dark-text-secondary: #a0a0a0;
+$dark-border: #444444;
+$dark-navbar-bg: #1a1a1a;
+$dark-hover: #00A9A5E5;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Typography
+$font-family: Arial, sans-serif;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-2xl: 28px;
+
+$line-height: 1.5;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Border radius
+$border-radius: 0.25rem;
+$border-radius-lg: 0.5rem;
+
+// Transitions
+$transition-duration: 0.3s;
+$transition-timing: ease-in-out;
