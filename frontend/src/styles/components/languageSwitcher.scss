@@ -10,7 +10,7 @@
     border: none;
     color: white;
     padding: variables.$spacing-md variables.$spacing-lg;
-    font-size: variables.$font-size-base;
+    font-size: var(--font-size);
     font-weight: 500;
     cursor: pointer;
     display: flex;

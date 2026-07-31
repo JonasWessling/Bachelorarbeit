@@ -1,5 +1,6 @@
 import FontMenuModal from "./FontMenuModal.jsx";
+import ModalConstants from "../../assets/constants/ModalConstants.json";
 
 export const modalRegistry = {
-  fontMenuModal: FontMenuModal,
+  [ModalConstants.ModalIDs.FontMenu]: FontMenuModal,
 };

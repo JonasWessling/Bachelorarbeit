@@ -8,11 +8,15 @@
   "english": "Englisch",
   "german": "Deutsch",
 
-  "fontMenu": "Darstellungseinstellungen",
+  "displaySettings": "Darstellungseinstellungen",
   "fontSize": "Schriftgröße",
   "fontFamily": "Schriftart",
   "lineHeight": "Zeilenabstand",
   "highContrast": "Hoher Kontrast",
+  "save": "Speichern",
+  "cancel": "Abbrechen",
+  "reset": "Zurücksetzen",
+  "back": "Zurück",
 
   "small": "Klein",
   "medium": "Mittel",

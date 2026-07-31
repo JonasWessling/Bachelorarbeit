@@ -58,7 +58,7 @@
     }
   }
 
-  .navbar-theme-toggle {
+  .navbar-icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,12 +66,11 @@
     border: none;
     color: white;
     cursor: pointer;
-    padding: variables.$spacing-md;
     margin-right: 24px;
     transition: color variables.$transition-duration variables.$transition-timing;
 
     svg {
-      font-size: 24px;
+      font-size: calc(1.5 * var(--font-size));
     }
   }
 }

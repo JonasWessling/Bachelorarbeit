@@ -4,121 +4,124 @@
 
 .login-container {
   @include mixins.flex-center;
+  width: 100%;
   min-height: 100vh;
-  padding: variables.$spacing-md;
-  background-color: var(--bg-primary);
+  padding: variables.$spacing-xl;
+  box-sizing: border-box;
+  background: var(--bg-special);
+}
 
-  .login-card {
-    background: var(--bg-secondary);
-    border-radius: variables.$border-radius-lg;
-    @include mixins.box-shadow-lg;
-    padding: variables.$spacing-xl;
-    max-width: 400px;
-    width: 100%;
+.login-card {
+  background: var(--bg-primary);
+  max-width: 400px;
+  width: 100%;
+  padding: variables.$spacing-xl;
+  border-radius: variables.$border-radius;
+  @include mixins.box-shadow-lg;
+  z-index: 1;
 
-    .login-header {
-      text-align: center;
-      margin-bottom: variables.$spacing-xl;
+  .login-header {
+    text-align: center;
+    margin-bottom: variables.$spacing-xl;
 
-      h1 {
-        font-size: variables.$font-size-2xl;
+    h1 {
+      font-size: variables.$font-size-2xl;
+      color: var(--text-primary);
+      margin: 0 0 variables.$spacing-sm 0;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: variables.$font-size-sm;
+      margin: 0;
+    }
+  }
+
+  .login-form {
+    @include mixins.flex-column;
+    gap: variables.$spacing-md;
+
+    .form-group {
+      @include mixins.flex-column;
+      gap: variables.$spacing-sm;
+
+      label {
+        font-weight: 600;
         color: var(--text-primary);
-        margin: 0 0 variables.$spacing-sm 0;
       }
 
-      p {
-        color: var(--text-secondary);
-        font-size: variables.$font-size-sm;
-        margin: 0;
+      input {
+        padding: variables.$spacing-md;
+        border: 1px solid var(--border-color);
+        border-radius: variables.$border-radius;
+        font-size: variables.$font-size-base;
+        font-family: variables.$font-family;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+
+        &:focus {
+          outline: none;
+          border-color: variables.$color-primary;
+          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        &:disabled {
+          background-color: var(--bg-tertiary);
+          cursor: not-allowed;
+        }
       }
     }
 
-    .login-form {
+    .form-actions {
       @include mixins.flex-column;
       gap: variables.$spacing-md;
+      margin-top: variables.$spacing-md;
 
-      .form-group {
-        @include mixins.flex-column;
-        gap: variables.$spacing-sm;
+      button {
+        padding: variables.$spacing-md variables.$spacing-lg;
+        border: none;
+        border-radius: variables.$border-radius;
+        font-size: variables.$font-size-base;
+        font-weight: 600;
+        cursor: pointer;
+        @include mixins.transition;
 
-        label {
-          font-weight: 600;
-          color: var(--text-primary);
-        }
+        &.btn-primary {
+          background-color: variables.$color-primary;
+          color: white;
 
-        input {
-          padding: variables.$spacing-md;
-          border: 1px solid var(--border-color);
-          border-radius: variables.$border-radius;
-          font-size: variables.$font-size-base;
-          font-family: variables.$font-family;
-          background-color: var(--bg-primary);
-          color: var(--text-primary);
-
-          &:focus {
-            outline: none;
-            border-color: variables.$color-primary;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-          }
-
-          &:disabled {
-            background-color: var(--bg-tertiary);
-            cursor: not-allowed;
+          &:hover:not(:disabled) {
+            background-color: color.adjust(variables.$color-primary, $lightness: -10%);
           }
         }
-      }
 
-      .form-actions {
-        @include mixins.flex-column;
-        gap: variables.$spacing-md;
-        margin-top: variables.$spacing-md;
-
-        button {
-          padding: variables.$spacing-md variables.$spacing-lg;
-          border: none;
-          border-radius: variables.$border-radius;
-          font-size: variables.$font-size-base;
-          font-weight: 600;
-          cursor: pointer;
-          @include mixins.transition;
-
-          &.btn-primary {
-            background-color: variables.$color-primary;
-            color: white;
-
-            &:hover:not(:disabled) {
-              background-color: color.adjust(variables.$color-primary, $lightness: -10%);
-            }
-          }
-
-          &:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-          }
-        }
-      }
-    }
-
-    .login-footer {
-      text-align: center;
-      margin-top: variables.$spacing-lg;
-      font-size: variables.$font-size-sm;
-      color: var(--text-secondary);
-
-      a {
-        color: variables.$color-primary;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
         }
       }
     }
   }
 
-  @include mixins.responsive('md') {
-    .login-card {
-      padding: variables.$spacing-2xl;
+  .login-footer {
+    text-align: center;
+    margin-top: variables.$spacing-lg;
+    font-size: variables.$font-size-sm;
+    color: var(--text-secondary);
+
+    a {
+      color: variables.$color-primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
+}
+
+@include mixins.responsive('md') {
+  .login-card {
+    padding: variables.$spacing-2xl;
   }
 }

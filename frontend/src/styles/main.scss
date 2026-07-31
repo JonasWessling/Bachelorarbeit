@@ -83,3 +83,4 @@ body.high-contrast button {
 @include meta.load-css('components/languageSwitcher.scss');
 @include meta.load-css('components/modal.scss');
 @include meta.load-css('components/inputs.scss');
+@include meta.load-css('helpers.scss');

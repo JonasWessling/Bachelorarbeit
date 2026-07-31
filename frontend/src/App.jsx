@@ -19,7 +19,7 @@ export default App;
 
 const Layout = () => {
   const location = useLocation();
-  const hideNavBarOn = ["/404"];
+  const hideNavBarOn = ["/login", "/404"];
   const show = !hideNavBarOn.includes(location.pathname);
   const prefTheme = localStorage.getItem("theme");
   const [theme, setTheme] = useState(prefTheme || "light");

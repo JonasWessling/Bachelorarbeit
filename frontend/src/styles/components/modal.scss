@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: variables.$font-size-base;
+    font-size: calc(1.25 * var(--font-size));
     margin-bottom: 1rem;
     background-color: var(--highlight);
     color: white;

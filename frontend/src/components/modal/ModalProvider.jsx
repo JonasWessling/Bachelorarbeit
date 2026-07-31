@@ -5,6 +5,28 @@ import { modalRegistry } from "./ModalRegistry.js";
 
 const ModalContext = createContext(null);
 
+const resolveModalComponent = (modalId) => {
+  if (!modalId) {
+    return null;
+  }
+
+  if (modalRegistry[modalId]) {
+    return modalRegistry[modalId];
+  }
+
+  const normalizedModalId = String(modalId).toLowerCase();
+  if (modalRegistry[normalizedModalId]) {
+    return modalRegistry[normalizedModalId];
+  }
+
+  const matchingEntry = Object.entries(modalRegistry).find(
+    ([registeredId]) =>
+      String(registeredId).toLowerCase() === normalizedModalId,
+  );
+
+  return matchingEntry?.[1] ?? null;
+};
+
 const ModalProvider = ({ children }) => {
   const [modal, setModal] = useState(null);
 
@@ -13,7 +35,7 @@ const ModalProvider = ({ children }) => {
       const { event, modalId, props } =
         typeof payload === "string" ? { modalId: payload } : payload;
 
-      const ModalComponent = modalRegistry[modalId];
+      const ModalComponent = resolveModalComponent(modalId);
 
       if (!ModalComponent) {
         console.warn(`No modal registered for id: ${modalId}`);

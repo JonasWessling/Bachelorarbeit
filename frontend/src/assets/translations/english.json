@@ -8,11 +8,15 @@
   "english": "English",
   "german": "German",
 
-  "fontMenu": "Display settings",
+  "displaySettings": "Display settings",
   "fontSize": "Font size",
   "fontFamily": "Font family",
   "lineHeight": "Line height",
   "highContrast": "High contrast",
+  "save": "Save",
+  "cancel": "Cancel",
+  "reset": "Reset",
+  "back": "Back",
 
   "small": "Small",
   "medium": "Medium",

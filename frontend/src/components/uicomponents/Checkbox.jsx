@@ -16,7 +16,7 @@ const Checkbox = ({
   };
 
   return (
-    <div className="checkbox">
+    <div className="custom-checkbox">
       <input
         type="checkbox"
         id={id}
@@ -25,10 +25,10 @@ const Checkbox = ({
         disabled={disabled}
         name={name}
         onChange={handleChange}
-        className="checkbox-input"
+        className="custom-checkbox-input"
       />
       {label ? (
-        <label htmlFor={id} className="checkbox-label">
+        <label htmlFor={id} className="custom-checkbox-label">
           {label}
         </label>
       ) : null}

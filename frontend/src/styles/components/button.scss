@@ -77,8 +77,11 @@
 }
 
 .unstyled-btn {
+  background: none;
+  color: inherit;
   border: none;
-  font-size: variables.$font-size-base;
+  padding: 0;
+  font: inherit;
   cursor: pointer;
-  text-decoration: none;
+  outline: inherit;
 }

@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -11,37 +13,40 @@ const LoginPage = () => {
         </div>
         <div className="login-form">
           <div className="form-group">
+            <label htmlFor="login-input">{t("email")}</label>
             <input
+              id="login-input"
               type="text"
               placeholder={t("email")}
               onChange={(e) => {}}
+              aria-label="email-input"
               required
-              aria-label="Email"
             />
+            <label htmlFor="password-input">{t("password")}</label>
             <input
+              id="password-input"
               type="password"
               placeholder={t("password")}
               onChange={(e) => {}}
+              aria-label="password-input"
               required
-              aria-label="Password"
             />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary">
+              {t("login")}
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => navigate("/")}
+            >
+              {t("back")}
+            </button>
           </div>
         </div>
         <div className="login-footer">
-          <button
-            type="submit"
-            className="btn btn-primary"
-            aria-label="Login-Button"
-          >
-            {t("login")}
-          </button>
-          <button
-            type="register"
-            className="btn btn-default"
-            aria-label="Register"
-          >
-            {t("register")}
-          </button>
+          <a href="/register">{t("register")}</a>
         </div>
       </div>
     </div>

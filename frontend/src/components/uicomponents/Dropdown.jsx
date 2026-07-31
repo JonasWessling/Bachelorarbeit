@@ -17,19 +17,19 @@ const Dropdown = ({
   };
 
   return (
-    <div className="dropdown">
+    <div className="custom-dropdown">
       {label ? (
-        <label htmlFor={id} className="dropdown-label">
+        <label htmlFor={id} className="custom-dropdown-label">
           {label}
         </label>
       ) : null}
-      <div className="dropdown-field">
+      <div className="custom-dropdown-field">
         <select
           id={id}
           name={name ?? id}
           value={value}
           onChange={handleChange}
-          className="dropdown-menu"
+          className="custom-dropdown-menu"
           disabled={disabled}
           required={required}
         >
@@ -37,7 +37,7 @@ const Dropdown = ({
             <option
               key={option.value}
               value={option.value}
-              className="dropdown-option"
+              className="custom-dropdown-option"
             >
               {option.label}
             </option>
