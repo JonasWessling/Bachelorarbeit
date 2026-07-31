@@ -1,0 +1,62 @@
+@use '../variables.scss';
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: variables.$border-radius;
+    width: min(600px, calc(100vw - 2rem));
+    background-color:  var(--bg-special);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: variables.$font-size-base;
+    margin-bottom: 1rem;
+    background-color: var(--highlight);
+    color: white;
+
+  }
+
+  .modal-close {
+    border: 0;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--navbar-text);
+  }
+
+  .modal-body {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .modal-footer {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}

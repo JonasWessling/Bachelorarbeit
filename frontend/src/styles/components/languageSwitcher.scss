@@ -1,32 +1,31 @@
 @use '../variables.scss';
+@use "sass:color";
 
-// ===== DROPDOWN BASE STYLES =====
-.dropdown {
+.languageDropdown {
   position: relative;
   display: inline-block;
 
   &__trigger {
     background: none;
     border: none;
-    color: var(--navbar-text);
+    color: white;
     padding: variables.$spacing-md variables.$spacing-lg;
     font-size: variables.$font-size-base;
     font-weight: 500;
     cursor: pointer;
     display: flex;
+    font-family: var(--font-family), sans-serif;
     align-items: center;
     gap: variables.$spacing-sm;
     transition: color variables.$transition-duration variables.$transition-timing;
-    border-radius: variables.$border-radius;
     white-space: nowrap;
 
     &:hover {
-      color: variables.$color-muted-teal;
+      background-color: color.adjust(variables.$color-primary, $lightness: -10%);
     }
 
     &:focus {
-      outline: none;
-      color: variables.$color-muted-teal;
+      background-color: color.adjust(variables.$color-primary, $lightness: -10%);
     }
 
     svg,
@@ -115,27 +114,25 @@
   }
 }
 
-// ===== NAVBAR-SPECIFIC DROPDOWN VARIANT =====
 .navbar {
-  .dropdown__trigger {
+  .languageDropdown__trigger {
     padding: 0 variables.$spacing-lg;
     height: 100%;
     display: flex;
     align-items: center;
 
     &:hover {
-      background-color: rgba(0, 169, 165, 0.1);
+      background-color: color.adjust(variables.$color-primary, $lightness: -10%);
     }
   }
 
-  .dropdown__menu {
+  .languageDropdown__menu {
     right: 0;
     top: calc(100% - 1px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   }
 }
 
-// ===== LANGUAGE SWITCHER SPECIFIC =====
 .language-switcher {
   display: flex;
   align-items: center;

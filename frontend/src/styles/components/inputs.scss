@@ -1,0 +1,95 @@
+@use "../variables.scss";
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: variables.$spacing-xs;
+  width: 100%;
+  margin-bottom: variables.$spacing-md;
+
+
+  .dropdown-label {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+
+  .dropdown-field {
+    position: relative;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    appearance: none;
+    width: 100%;
+    min-height: 2.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: variables.$border-radius;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    padding: variables.$spacing-sm variables.$spacing-xl variables.$spacing-sm variables.$spacing-md;
+    font-size: var(--font-size);
+    font-weight: 500;
+    font-family: var(--font-family), sans-serif;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: border-color variables.$transition-duration variables.$transition-timing,
+    box-shadow variables.$transition-duration variables.$transition-timing;
+  }
+
+  .dropdown-menu:hover {
+    border-color: var(--hover);
+    color: var(--hover);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  .dropdown-menu:focus {
+    outline: none;
+    border-color: var(--hover);
+    box-shadow: 0 0 0 3px rgba(0, 169, 165, 0.16);
+  }
+
+  .dropdown-menu:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .dropdown-field::after {
+    content: "▾";
+    position: absolute;
+    top: 50%;
+    right: variables.$spacing-md;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-option {
+    color: var(--text-primary);
+    padding: variables.$spacing-sm variables.$spacing-xl variables.$spacing-sm variables.$spacing-md;
+    font-size: var(--font-size);
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: variables.$spacing-sm variables.$spacing-xl variables.$spacing-sm variables.$spacing-md;
+
+  .checkbox-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .checkbox-label {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+}
+

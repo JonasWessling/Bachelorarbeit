@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import LanguageSwitcher from "../localization/LanguageSwitcher.jsx";
+import LanguageSwitcher from "./uicomponents/LanguageSwitcher.jsx";
 
 const Navbar = (props) => {
   const toggleTheme = () => {

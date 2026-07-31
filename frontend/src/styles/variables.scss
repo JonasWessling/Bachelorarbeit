@@ -16,12 +16,12 @@ $color-muted-teal: #81A094;
 
 // ===== LIGHT MODE PALETTE =====
 $light-bg-primary: #ffffff;
-$light-bg-secondary: #dadada;
-$light-bg-tertiary: #e9ecef;
+$light-bg-secondary: #e9ecef;
+$light-bg-tertiary: #dadada;
 $light-text-primary: #212529;
 $light-text-secondary: #6c757d;
-$light-border: #dee2e6;
-$light-navbar-bg: #0B5351;
+$light-border: #6c757d;
+$light-highlight: #0B5351;
 $light-hover: #00A9A5E5;
 
 // ===== DARK MODE PALETTE =====
@@ -30,8 +30,8 @@ $dark-bg-secondary: #343434;
 $dark-bg-tertiary: #3d3d3d;
 $dark-text-primary: #e0e0e0;
 $dark-text-secondary: #a0a0a0;
-$dark-border: #444444;
-$dark-navbar-bg: #1a1a1a;
+$dark-border: #a0a0a0;
+$dark-highlight: #0B5351;
 $dark-hover: #00A9A5E5;
 
 // Spacing
@@ -66,3 +66,31 @@ $border-radius-lg: 0.5rem;
 // Transitions
 $transition-duration: 0.3s;
 $transition-timing: ease-in-out;
+
+
+// helper
+
+.content-padding {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.font-size-14 {
+  font-size: $font-size-sm;
+}
+
+.font-size-16 {
+  font-size: $font-size-base;
+}
+
+.font-size-20 {
+  font-size: $font-size-lg;
+}
+
+.font-size-24 {
+  font-size: $font-size-xl;
+}
+
+.font-size-28 {
+  font-size: $font-size-2xl;
+}

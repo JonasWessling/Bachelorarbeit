@@ -2,18 +2,23 @@ import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const handleLanguageChange = (lang) => {
-    i18n.changeLanguage(lang).then(() => {
-      document.documentElement.lang = lang;
-    });
+    setLanguage(lang);
     setIsOpen(false);
+    localStorage.setItem("prefLang", lang);
   };
 
-  // Close dropdown when clicking outside
+  useEffect(() => {
+    const prefLang = localStorage.getItem("prefLang");
+    if (prefLang) {
+      setLanguage(prefLang);
+    }
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -25,10 +30,16 @@ const LanguageSwitcher = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const setLanguage = (lang) => {
+    i18n
+      .changeLanguage(lang)
+      .then(() => (document.documentElement.lang = lang));
+  };
+
   return (
-    <div className="dropdown language-switcher" ref={dropdownRef}>
+    <div className="languageDropdown language-switcher" ref={dropdownRef}>
       <button
-        className={`dropdown__trigger ${isOpen ? "is-open" : ""}`}
+        className={`languageDropdown__trigger ${isOpen ? "is-open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {i18n.language.toUpperCase()}
@@ -43,21 +54,21 @@ const LanguageSwitcher = () => {
         </svg>
       </button>
 
-      <ul className={`dropdown__menu ${isOpen ? "is-open" : ""}`}>
-        <li className="dropdown__item">
+      <ul className={`languageDropdown__menu ${isOpen ? "is-open" : ""}`}>
+        <li className="languageDropdown__item">
           <button
             onClick={() => handleLanguageChange("en")}
             className={i18n.language === "en" ? "is-active" : ""}
           >
-            English
+            {t("english")}
           </button>
         </li>
-        <li className="dropdown__item">
+        <li className="languageDropdown__item">
           <button
             onClick={() => handleLanguageChange("de")}
             className={i18n.language === "de" ? "is-active" : ""}
           >
-            Deutsch
+            {t("german")}
           </button>
         </li>
       </ul>

@@ -77,8 +77,8 @@
 }
 
 .unstyled-btn {
-  padding: variables.$spacing-sm variables.$spacing-md;
   border: none;
   font-size: variables.$font-size-base;
   cursor: pointer;
+  text-decoration: none;
 }

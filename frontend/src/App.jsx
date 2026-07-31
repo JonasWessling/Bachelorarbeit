@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, useLocation } from "react-router";
 import { routes } from "./routes.jsx";
 import Navbar from "./components/Navbar.jsx";
+import ModalProvider from "./components/modal/ModalProvider.jsx";
 import { useState, useEffect } from "react";
 import "./localization/config/i18n";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout />
+      <ModalProvider>
+        <Layout />
+      </ModalProvider>
     </BrowserRouter>
   );
 };
@@ -22,7 +25,7 @@ const Layout = () => {
   const [theme, setTheme] = useState(prefTheme || "light");
 
   useEffect(() => {
-    document.body.className = theme === "dark" ? "dark-mode" : "";
+    document.body.classList.toggle("dark-mode", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 

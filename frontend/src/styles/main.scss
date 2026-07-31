@@ -19,11 +19,11 @@ html {
   --bg-primary: #{variables.$light-bg-primary};
   --bg-secondary: #{variables.$light-bg-secondary};
   --bg-tertiary: #{variables.$light-bg-tertiary};
+  --bg-special: #{variables.$light-bg-primary};
   --text-primary: #{variables.$light-text-primary};
   --text-secondary: #{variables.$light-text-secondary};
   --border-color: #{variables.$light-border};
-  --navbar-bg: #{variables.$light-navbar-bg};
-  --navbar-text: #{variables.$light-bg-primary};
+  --highlight: #{variables.$light-highlight};
   --hover: #{variables.$light-hover};
 
   --font-family: Arial, sans-serif;
@@ -51,21 +51,35 @@ body.dark-mode {
   --bg-primary: #{variables.$dark-bg-primary};
   --bg-secondary: #{variables.$dark-bg-secondary};
   --bg-tertiary: #{variables.$dark-bg-tertiary};
+  --bg-special: #{variables.$dark-bg-secondary};
   --text-primary: #{variables.$dark-text-primary};
   --text-secondary: #{variables.$dark-text-secondary};
   --border-color: #{variables.$dark-border};
-  --navbar-bg: #{variables.$light-navbar-bg};
-  --navbar-text: #{variables.$dark-text-primary};
+  --highlight: #{variables.$dark-highlight};
   --hover: #{variables.$dark-hover};
 }
 
-.content-padding {
-  padding-left: 24px;
-  padding-right: 24px;
+body.high-contrast {
+  --bg-primary: #000000;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #f0f0f0;
+  --border-color: #ffffff;
+  --highlight: #1f1f1f;
+  --bg-special: #121212;
+}
+
+body.high-contrast select,
+body.high-contrast input[type="checkbox"],
+body.high-contrast button {
+  accent-color: #{variables.$dark-hover};
 }
 
 // Import all component styles
 @include meta.load-css('components/login.scss');
 @include meta.load-css('components/navbar.scss');
 @include meta.load-css('components/button.scss');
-@include meta.load-css('components/dropdown.scss');
+@include meta.load-css('components/languageSwitcher.scss');
+@include meta.load-css('components/modal.scss');
+@include meta.load-css('components/inputs.scss');

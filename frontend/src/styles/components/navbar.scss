@@ -3,7 +3,7 @@
 @use '../mixins.scss';
 
 .navbar {
-  background-color: var(--navbar-bg);
+  background-color: var(--highlight);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -20,13 +20,9 @@
     
     a {
       text-decoration: none;
-      color: var(--navbar-text);
+      color: white;
       font-size: variables.$font-size-lg;
       transition: color variables.$transition-duration variables.$transition-timing;
-
-      &:hover {
-        color: variables.$color-muted-teal;
-      }
     }
   }
 
@@ -51,7 +47,7 @@
       display: flex;
       align-items: center;
       padding: 0 variables.$spacing-lg;
-      color: var(--navbar-text);
+      color: white;
       text-decoration: none;
       font-weight: 500;
       transition: background-color variables.$transition-duration variables.$transition-timing;
@@ -68,15 +64,11 @@
     justify-content: center;
     background: none;
     border: none;
-    color: var(--navbar-text);
+    color: white;
     cursor: pointer;
     padding: variables.$spacing-md;
     margin-right: 24px;
     transition: color variables.$transition-duration variables.$transition-timing;
-
-    &:hover {
-      color: variables.$color-muted-teal;
-    }
 
     svg {
       font-size: 24px;

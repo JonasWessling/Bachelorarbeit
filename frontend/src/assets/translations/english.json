@@ -4,5 +4,19 @@
   "password": "Password",
   "register": "Register",
   "forgotPassword": "Forgot Password?",
-  "resetPassword": "Reset Password"
+  "resetPassword": "Reset Password",
+  "english": "English",
+  "german": "German",
+
+  "fontMenu": "Display settings",
+  "fontSize": "Font size",
+  "fontFamily": "Font family",
+  "lineHeight": "Line height",
+  "highContrast": "High contrast",
+
+  "small": "Small",
+  "medium": "Medium",
+  "default": "Default",
+  "large": "Large",
+  "extraLarge": "Extra large"
 }
