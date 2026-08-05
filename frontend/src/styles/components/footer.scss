@@ -1,0 +1,37 @@
+@use "sass:color";
+@use '../variables.scss';
+@use '../mixins.scss';
+
+
+.custom-footer {
+  background-color: var(--highlight);
+  position: absolute;
+  width: calc(100% - #{variables.$app-padding * 2});
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: variables.$spacing-md;
+  height: 80px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  .custom-footer-item {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 variables.$spacing-md;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color variables.$transition-duration variables.$transition-timing;
+    }
+  }
+}

@@ -20,19 +20,22 @@
 
   &.btn-primary {
     background-color: variables.$color-primary;
+    border: 2px solid variables.$color-primary;
     color: white;
 
     &:hover:not(:disabled) {
-      background-color: color.adjust(variables.$color-primary, $lightness: -10%);
+      background-color: var(--hover);
+      border: 2px solid var(--hover);
     }
   }
 
   &.btn-secondary {
-    background-color: variables.$color-secondary;
-    color: white;
+    background-color: transparent;
+    color: var(--btn-scd-border);
+    border: 2px solid var(--btn-scd-border);
 
     &:hover:not(:disabled) {
-      background-color: color.adjust(variables.$color-secondary, $lightness: -10%);
+      border-color: var(--alt-hover);
     }
   }
 

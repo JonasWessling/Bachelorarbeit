@@ -13,6 +13,8 @@
   "fontFamily": "Font family",
   "lineHeight": "Line height",
   "highContrast": "High contrast",
+  "previewTitle": "Preview",
+  "previewText": "The quick brown fox jumps over the lazy dog. This text shows how your selected display settings will look.",
   "save": "Save",
   "cancel": "Cancel",
   "reset": "Reset",

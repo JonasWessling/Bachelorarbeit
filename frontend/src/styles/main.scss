@@ -15,16 +15,27 @@ html {
 }
 
 :root {
-  // Light mode (default)
+  // Backgrounds
   --bg-primary: #{variables.$light-bg-primary};
   --bg-secondary: #{variables.$light-bg-secondary};
   --bg-tertiary: #{variables.$light-bg-tertiary};
   --bg-special: #{variables.$light-bg-primary};
+
+  //Text
   --text-primary: #{variables.$light-text-primary};
   --text-secondary: #{variables.$light-text-secondary};
+
+  //Accents
   --border-color: #{variables.$light-border};
+  --alt-border-color: #{variables.$light-highlight};
   --highlight: #{variables.$light-highlight};
+  --alt-highlight: #{variables.$light-highlight};
   --hover: #{variables.$light-hover};
+  --alt-hover: #{variables.$light-highlight};
+
+  //Special
+  --btn-scd-border: #{variables.$light-highlight};
+
 
   --font-family: Arial, sans-serif;
   --font-size: 16px;
@@ -35,45 +46,78 @@ body {
   font-family: var(--font-family), sans-serif;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-tertiary);
   color: var(--text-primary);
 }
 
 #root {
   background-color: var(--bg-primary);
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: variables.$app-padding;
+  margin-right: variables.$app-padding;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: var(--text-primary);
 }
 
+.app-layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+}
+
 body.dark-mode {
+  //Background
   --bg-primary: #{variables.$dark-bg-primary};
   --bg-secondary: #{variables.$dark-bg-secondary};
   --bg-tertiary: #{variables.$dark-bg-tertiary};
   --bg-special: #{variables.$dark-bg-secondary};
+
+  //Text
   --text-primary: #{variables.$dark-text-primary};
   --text-secondary: #{variables.$dark-text-secondary};
+
+  //Accents
   --border-color: #{variables.$dark-border};
+  --alt-border-color: #{variables.$dark-text-primary};
   --highlight: #{variables.$dark-highlight};
+  --alt-highlight: #{variables.$hc-bg-secondary};
   --hover: #{variables.$dark-hover};
+  --alt-hover: #{variables.$light-highlight};
+
+  //Special
+  --btn-scd-border: #{variables.$dark-border}
 }
 
 body.high-contrast {
-  --bg-primary: #000000;
-  --bg-secondary: #121212;
-  --bg-tertiary: #1f1f1f;
-  --text-primary: #ffffff;
-  --text-secondary: #f0f0f0;
-  --border-color: #ffffff;
-  --highlight: #1f1f1f;
-  --bg-special: #121212;
+  --bg-primary: #{variables.$hc-bg-primary};
+  --bg-secondary: #{variables.$hc-bg-secondary};
+  --bg-tertiary: #{variables.$hc-bg-tertiary};
+  --bg-special: #{variables.$hc-bg-secondary};
+
+  --text-primary: #{variables.$hc-text-primary};
+  --text-secondary: #{variables.$hc-text-secondary};
+
+  //Accents
+  --border-color: #{variables.$hc-border};
+  --alt-border-color: #{variables.$hc-highlight};
+  --highlight: #{variables.$hc-highlight};
+  --alt-highlight: #{variables.$hc-bg-secondary};
+  --hover: #{variables.$hc-hover};
+  --alt-hover: #{variables.$light-highlight};#
+
+  //Special
+  --btn-scd-border: #{variables.$color-white}
 }
 
 body.high-contrast select,
 body.high-contrast input[type="checkbox"],
 body.high-contrast button {
-  accent-color: #{variables.$dark-hover};
+  accent-color: var(--hover);
 }
 
 // Import all component styles
@@ -84,3 +128,4 @@ body.high-contrast button {
 @include meta.load-css('components/modal.scss');
 @include meta.load-css('components/inputs.scss');
 @include meta.load-css('helpers.scss');
+@include meta.load-css('components/footer.scss');

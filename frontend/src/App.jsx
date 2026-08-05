@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import ModalProvider from "./components/modal/ModalProvider.jsx";
 import { useState, useEffect } from "react";
 import "./localization/config/i18n";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
@@ -20,7 +21,9 @@ export default App;
 const Layout = () => {
   const location = useLocation();
   const hideNavBarOn = ["/login", "/404"];
-  const show = !hideNavBarOn.includes(location.pathname);
+  const hideFooterOn = ["/login", "/404"];
+  const showFooter = !hideFooterOn.includes(location.pathname);
+  const showNav = !hideNavBarOn.includes(location.pathname);
   const prefTheme = localStorage.getItem("theme");
   const [theme, setTheme] = useState(prefTheme || "light");
 
@@ -34,12 +37,39 @@ const Layout = () => {
     setTheme(theme);
   };
 
+  useEffect(() => {
+    try {
+      const savedSettings = localStorage.getItem("fontSettings");
+      if (savedSettings) {
+        const settings = JSON.parse(savedSettings);
+        document.documentElement.style.setProperty(
+          "--font-size",
+          settings.fontSize,
+        );
+        document.documentElement.style.setProperty(
+          "--font-family",
+          settings.fontFamily,
+        );
+        document.documentElement.style.setProperty(
+          "--line-height",
+          settings.lineHeight,
+        );
+        document.body.classList.toggle("high-contrast", settings.highContrast);
+      }
+    } catch (error) {
+      console.error("Error loading font settings:", error);
+    }
+  }, []);
+
   return (
-    <div>
-      {show && (
+    <div className="app-layout">
+      {showNav && (
         <Navbar theme={theme} setTheme={(theme) => setAndSaveTheme(theme)} />
       )}
-      <Routes>{routes}</Routes>
+      <main className="app-content">
+        <Routes>{routes}</Routes>
+      </main>
+      {showFooter && <Footer />}
     </div>
   );
 };

@@ -38,15 +38,14 @@
   }
 
   .custom-dropdown-menu:hover {
-    border-color: var(--hover);
-    color: var(--hover);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    border-color: var(--alt-hover);
+    box-shadow: 0 0 0 2px var(--alt-hover);
   }
 
   .custom-dropdown-menu:focus {
     outline: none;
-    border-color: var(--hover);
-    box-shadow: 0 0 0 3px rgba(0, 169, 165, 0.16);
+    border-color: var(--alt-hover);
+    box-shadow: 0 0 0 2px var(--alt-hover);
   }
 
   .custom-dropdown-menu:disabled {
@@ -84,6 +83,11 @@
     height: 1.25rem;
     flex-shrink: 0;
     cursor: pointer;
+  }
+
+  .custom-checkbox-input:hover {
+    border-color: var(--alt-hover);
+    box-shadow: 0 0 0 2px var(--alt-hover);
   }
 
   .custom-checkbox-label {

@@ -1,23 +1,24 @@
 // ===== SEMANTIC COLOR PALETTE =====
-$color-primary: rgba(0, 169, 165, 0.9);
+$color-primary: #0B5351;
 $color-secondary: #6c757d;
 $color-danger: #dc3545;
 $color-success: #28a745;
 $color-warning: #ffc107;
 $color-info: #17a2b8;
 
+$color-white: #ffffff;
+
 // Brand/Accent colors
 $color-jet-black: #263D42;
 $dark-slate-grey: #0B5351;
 $light-sea-green: #00A9A5;
 $air-force-blue: #4E8098;
-$color-lavender-mist: #F6F2FF;
 $color-muted-teal: #81A094;
 
 // ===== LIGHT MODE PALETTE =====
 $light-bg-primary: #ffffff;
 $light-bg-secondary: #e9ecef;
-$light-bg-tertiary: #dadada;
+$light-bg-tertiary: #e5e5e5;
 $light-text-primary: #212529;
 $light-text-secondary: #6c757d;
 $light-border: #6c757d;
@@ -25,14 +26,26 @@ $light-highlight: #0B5351;
 $light-hover: #00A9A5E5;
 
 // ===== DARK MODE PALETTE =====
-$dark-bg-primary: #2d2d2d;
-$dark-bg-secondary: #343434;
+$dark-bg-primary: #181818;
+$dark-bg-secondary: #212121;
 $dark-bg-tertiary: #3d3d3d;
 $dark-text-primary: #e0e0e0;
 $dark-text-secondary: #a0a0a0;
-$dark-border: #a0a0a0;
-$dark-highlight: #0B5351;
-$dark-hover: #00A9A5E5;
+$dark-border: #e0e0e0;
+$dark-highlight: #212121;
+$dark-hover: #0e302e;
+
+// ==== HIGH CONTRAST MODE PALETTE =====
+
+$hc-bg-primary: #000000;
+$hc-bg-secondary: #121212;
+$hc-bg-tertiary: #1f1f1f;
+$hc-text-primary: #ffffff;
+$hc-text-secondary: #f0f0f0;
+$hc-border: #ffffff;
+$hc-highlight: #0e302e;
+$hc-hover: #0B5351;
+
 
 // Spacing
 $spacing-xs: 0.25rem;
@@ -66,4 +79,7 @@ $border-radius-lg: 0.5rem;
 // Transitions
 $transition-duration: 0.3s;
 $transition-timing: ease-in-out;
+
+// Page Setup
+$app-padding: 15%;
 

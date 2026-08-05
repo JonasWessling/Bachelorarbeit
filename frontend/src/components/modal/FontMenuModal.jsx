@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CloseIcon from "@mui/icons-material/Close";
 import Dropdown from "../uicomponents/Dropdown.jsx";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Checkbox from "../uicomponents/Checkbox.jsx";
 
 const defaultSettings = {
@@ -45,14 +45,33 @@ const applySettings = (settings) => {
 const FontMenuModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [settings, setSettings] = useState(loadSettings);
+  const modalRootRef = useRef(null);
 
   useEffect(() => {
-    applySettings(settings);
+    applySettings(loadSettings());
   }, []);
 
   useEffect(() => {
-    applySettings(settings);
-  }, [settings]);
+    const modalContentElement = modalRootRef.current?.closest(".modal-content");
+    if (!modalContentElement) {
+      return undefined;
+    }
+
+    modalContentElement.classList.toggle(
+      "high-contrast-preview",
+      settings.highContrast,
+    );
+
+    modalContentElement.classList.toggle(
+      "normal-contrast-preview",
+      !settings.highContrast,
+    );
+
+    return () => {
+      modalContentElement.classList.remove("high-contrast-preview");
+      modalContentElement.classList.remove("normal-contrast-preview");
+    };
+  }, [settings.highContrast]);
 
   const saveSettings = () => {
     localStorage.setItem("fontSettings", JSON.stringify(settings));
@@ -61,15 +80,11 @@ const FontMenuModal = ({ onClose }) => {
   };
 
   const handleClose = () => {
-    const savedSettings = loadSettings();
-    setSettings(savedSettings);
-    applySettings(savedSettings);
     onClose?.();
   };
 
   const resetSettings = () => {
     setSettings(defaultSettings);
-    applySettings(settings);
   };
 
   const updateSettings = (type, value) => {
@@ -80,14 +95,10 @@ const FontMenuModal = ({ onClose }) => {
   };
 
   return (
-    <div>
+    <div ref={modalRootRef}>
       <div className="modal-header">
         <h1>{t("displaySettings")}</h1>
-        <button
-          className="modal-close"
-          onClick={handleClose}
-          aria-label="close"
-        >
+        <button onClick={handleClose} aria-label="close">
           <CloseIcon />
         </button>
       </div>
@@ -122,7 +133,6 @@ const FontMenuModal = ({ onClose }) => {
               ]}
             />
           </div>
-
           <div className="column is-half">
             <Dropdown
               id="line-height"
@@ -144,6 +154,17 @@ const FontMenuModal = ({ onClose }) => {
               onChange={(checked) => updateSettings("highContrast", checked)}
             />
           </div>
+        </div>
+        <div
+          style={{
+            fontSize: settings.fontSize,
+            fontFamily: settings.fontFamily,
+            lineHeight: settings.lineHeight,
+          }}
+          className={`font-preview`}
+        >
+          <h2>{t("previewTitle")}</h2>
+          <p>{t("previewText")}</p>
         </div>
       </div>
       <div className="modal-footer">
