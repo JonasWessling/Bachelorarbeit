@@ -19,6 +19,9 @@
   "cancel": "Abbrechen",
   "reset": "Zurücksetzen",
   "back": "Zurück",
+  "goHome": "Zur Startseite",
+
+  "pageNotFound": "Hoppla! Seite nicht gefunden.",
 
   "small": "Klein",
   "medium": "Mittel",

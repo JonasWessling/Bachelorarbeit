@@ -19,6 +19,9 @@
   "cancel": "Cancel",
   "reset": "Reset",
   "back": "Back",
+  "goHome": "Go home",
+
+  "pageNotFound": "Oops! Page not found.",
 
   "small": "Small",
   "medium": "Medium",

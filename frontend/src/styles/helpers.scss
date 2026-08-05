@@ -38,3 +38,7 @@
   color: var(--text-primary);
   font-size: calc(1.75 * var(--font-size));
 }
+
+.is-highlighted-text {
+  color: var(--accent);
+}

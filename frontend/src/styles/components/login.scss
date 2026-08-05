@@ -76,30 +76,6 @@
       @include mixins.flex-column;
       gap: variables.$spacing-md;
       margin-top: variables.$spacing-md;
-
-      button {
-        padding: variables.$spacing-md variables.$spacing-lg;
-        border: none;
-        border-radius: variables.$border-radius;
-        font-size: variables.$font-size-base;
-        font-weight: 600;
-        cursor: pointer;
-        @include mixins.transition;
-
-        &.btn-primary {
-          background-color: variables.$color-primary;
-          color: white;
-
-          &:hover:not(:disabled) {
-            background-color: color.adjust(variables.$color-primary, $lightness: -10%);
-          }
-        }
-
-        &:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
-      }
     }
   }
 

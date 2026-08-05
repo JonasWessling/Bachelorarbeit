@@ -32,6 +32,7 @@ html {
   --alt-highlight: #{variables.$light-highlight};
   --hover: #{variables.$light-hover};
   --alt-hover: #{variables.$light-highlight};
+  --accent: #{variables.$light-highlight};
 
   //Special
   --btn-scd-border: #{variables.$light-highlight};
@@ -88,6 +89,7 @@ body.dark-mode {
   --alt-highlight: #{variables.$hc-bg-secondary};
   --hover: #{variables.$dark-hover};
   --alt-hover: #{variables.$light-highlight};
+  --accent: #{variables.$light-highlight};
 
   //Special
   --btn-scd-border: #{variables.$dark-border}
@@ -107,8 +109,9 @@ body.high-contrast {
   --alt-border-color: #{variables.$hc-highlight};
   --highlight: #{variables.$hc-highlight};
   --alt-highlight: #{variables.$hc-bg-secondary};
-  --hover: #{variables.$hc-hover};
-  --alt-hover: #{variables.$light-highlight};#
+  --hover: #{variables.$hc-highlight};
+  --alt-hover: #{variables.$light-highlight};
+  --accent: #{variables.$light-highlight};
 
   //Special
   --btn-scd-border: #{variables.$color-white}
