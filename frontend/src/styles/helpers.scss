@@ -34,6 +34,10 @@
   font-size: calc(5 * var(--font-size));
 }
 
+.is-hint {
+  font-size: calc(.7 * var(--font-size));
+}
+
 .is-h1 {
   color: var(--text-primary);
   font-size: calc(1.75 * var(--font-size));

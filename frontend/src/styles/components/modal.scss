@@ -90,8 +90,10 @@
     --alt-highlight: #{variables.$hc-highlight};
     --alt-border-color: #{variables.$hc-highlight};
     --bg-special: #121212;
-    --hover: #{variables.$dark-hover};
-    --alt-hover: #{variables.$light-highlight};
+    --hover: #{variables.$light-hover};
+    --alt-hover: #{variables.$light-hover};
+    --accent: #{variables.$light-hover};
+    --alt-accent: #{variables.$hc-highlight};
 
     --btn-scd-border: #{variables.$color-white};
 
@@ -118,6 +120,8 @@
     --alt-highlight: #{variables.$light-highlight};
     --hover: #{variables.$light-hover};
     --alt-hover: #{variables.$light-highlight};
+    --accent: #{variables.$light-highlight};
+    --alt-accent: #{variables.$light-hover};
 
     --btn-scd-border: #{variables.$light-highlight};
 
@@ -137,7 +141,8 @@
     --highlight: #{variables.$dark-highlight};
     --alt-highlight: #{variables.$hc-bg-secondary};
     --hover: #{variables.$dark-hover};
-    --alt-hover: #{variables.$light-highlight};
+    --accent: #{variables.$light-highlight};
+    --alt-accent: #{variables.$light-hover};
 
     --btn-scd-border: #{variables.$dark-border}
   }

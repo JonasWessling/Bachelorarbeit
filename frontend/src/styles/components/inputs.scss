@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../variables.scss";
 
 .custom-dropdown {
@@ -94,6 +95,51 @@
     color: var(--text-primary);
     font-size: var(--font-size-sm);
     font-weight: 600;
+  }
+}
+
+.custom-text-input {
+  width: 100%;
+
+  label {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  input {
+    padding: variables.$spacing-md;
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: variables.$border-radius;
+    font-size: var(--font-size);
+    font-weight: 500;
+    font-family: var(--font-family), sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    &:focus {
+      outline: none;
+      border-color: var(--alt-hover);
+      box-shadow: 0 0 0 2px var(--alt-hover);
+    }
+
+    &:disabled {
+      background-color: var(--bg-tertiary);
+      cursor: not-allowed;
+    }
+
+
+    &.error {
+      border-color: variables.$color-danger;
+      box-shadow: 0 0 0 2px color.change(variables.$color-danger, $alpha: 0.15);
+    }
+
+  }
+
+  p {
+    font-size: calc(.8 * var(--font-size));
+    color: variables.$color-danger
   }
 }
 

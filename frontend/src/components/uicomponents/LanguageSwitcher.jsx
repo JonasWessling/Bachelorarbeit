@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
@@ -42,8 +43,10 @@ const LanguageSwitcher = () => {
         className={`languageDropdown__trigger ${isOpen ? "is-open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
       >
+        <LanguageIcon />
         {i18n.language.toUpperCase()}
         <svg
+          className="languageDropdown__chevron"
           width="16"
           height="16"
           viewBox="0 0 16 16"

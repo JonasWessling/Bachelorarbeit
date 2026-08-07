@@ -1,12 +1,24 @@
-import { BrowserRouter, Routes, useLocation } from "react-router";
+import { BrowserRouter, useLocation } from "react-router";
 import { routes } from "./routes.jsx";
 import Navbar from "./components/Navbar.jsx";
 import ModalProvider from "./components/modal/ModalProvider.jsx";
 import { useState, useEffect } from "react";
 import "./localization/config/i18n";
 import Footer from "./components/Footer.jsx";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const { i18n } = useTranslation();
+  const prefLang = localStorage.getItem("prefLang");
+
+  useEffect(() => {
+    if (prefLang && prefLang !== "" && prefLang !== i18n.language) {
+      i18n
+        .changeLanguage(prefLang)
+        .then(() => (document.documentElement.lang = prefLang));
+    }
+  });
+
   return (
     <BrowserRouter>
       <ModalProvider>
@@ -20,8 +32,8 @@ export default App;
 
 const Layout = () => {
   const location = useLocation();
-  const hideNavBarOn = ["/login"];
-  const hideFooterOn = ["/login"];
+  const hideNavBarOn = ["/login", "/register"];
+  const hideFooterOn = ["/login", "/register"];
   const showFooter = !hideFooterOn.includes(location.pathname);
   const showNav = !hideNavBarOn.includes(location.pathname);
   const prefTheme = localStorage.getItem("theme");
@@ -66,9 +78,7 @@ const Layout = () => {
       {showNav && (
         <Navbar theme={theme} setTheme={(theme) => setAndSaveTheme(theme)} />
       )}
-      <main className="app-content">
-        <Routes>{routes}</Routes>
-      </main>
+      <main className="app-content">{routes}</main>
       {showFooter && <Footer />}
     </div>
   );

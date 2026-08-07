@@ -5,9 +5,8 @@
 
 .custom-footer {
   background-color: var(--highlight);
-  position: absolute;
-  width: calc(100% - #{variables.$app-padding * 2});
-  bottom: 0;
+  left: variables.$app-padding;
+  right: variables.$app-padding;
   z-index: 100;
   display: flex;
   justify-content: end;

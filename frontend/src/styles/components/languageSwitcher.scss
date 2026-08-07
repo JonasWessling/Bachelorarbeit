@@ -28,13 +28,13 @@
       background-color: color.adjust(variables.$color-primary, $lightness: -10%);
     }
 
-    svg,
+    .languageDropdown__chevron,
     i {
       font-size: 18px;
       transition: transform variables.$transition-duration variables.$transition-timing;
     }
 
-    &.is-open svg,
+    &.is-open .languageDropdown__chevron,
     &.is-open i {
       transform: rotate(180deg);
     }

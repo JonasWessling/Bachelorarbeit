@@ -45,31 +45,6 @@
       @include mixins.flex-column;
       gap: variables.$spacing-sm;
 
-      label {
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-
-      input {
-        padding: variables.$spacing-md;
-        border: 1px solid var(--border-color);
-        border-radius: variables.$border-radius;
-        font-size: variables.$font-size-base;
-        font-family: variables.$font-family;
-        background-color: var(--bg-primary);
-        color: var(--text-primary);
-
-        &:focus {
-          outline: none;
-          border-color: variables.$color-primary;
-          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-        }
-
-        &:disabled {
-          background-color: var(--bg-tertiary);
-          cursor: not-allowed;
-        }
-      }
     }
 
     .form-actions {
@@ -86,7 +61,7 @@
     color: var(--text-secondary);
 
     a {
-      color: variables.$color-primary;
+      color: var(--alt-hover);
       text-decoration: none;
 
       &:hover {

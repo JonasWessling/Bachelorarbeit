@@ -1,9 +1,39 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import InputField from "../components/uicomponents/inputField.jsx";
+import { useState } from "react";
+import { isEmailValid } from "../common/common.js";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showMailError, setShowMailError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!e.currentTarget.checkValidity()) {
+      setShowMailError(!isEmailValid(email));
+      return;
+    }
+
+    setShowMailError(false);
+    navigate("/");
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+
+    setEmail(value);
+    if (showMailError) {
+      setShowMailError(!isEmailValid(value));
+    }
+  };
+
+  const handleEmailBlur = () => {
+    setShowMailError(!isEmailValid(email));
+  };
 
   return (
     <div className="login-container">
@@ -11,29 +41,42 @@ const LoginPage = () => {
         <div className="login-header">
           <h1>{t("login")}</h1>
         </div>
-        <div className="login-form">
+        <form className="login-form" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
-            <label htmlFor="login-input">{t("email")}</label>
-            <input
-              id="login-input"
-              type="text"
+            <InputField
+              id="email"
+              type="email"
+              name="email"
               placeholder={t("email")}
-              onChange={(e) => {}}
-              aria-label="email-input"
+              onChange={handleEmailChange}
+              onBlur={handleEmailBlur}
+              ariaLabel={t("email")}
+              label={t("email")}
               required
+              errorMessage={t("invalidEmail")}
+              hasError={showMailError}
+              onFocus={() => setShowMailError(false)}
+              autoComplete="email"
             />
-            <label htmlFor="password-input">{t("password")}</label>
-            <input
-              id="password-input"
+            <InputField
+              id="password"
               type="password"
               placeholder={t("password")}
-              onChange={(e) => {}}
-              aria-label="password-input"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              ariaLabel={t("password")}
+              label={t("password")}
               required
+              autoComplete="current-password"
             />
           </div>
-          <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+          <div className="form-group form-actions">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={!email || !password || showMailError}
+            >
               {t("login")}
             </button>
             <button
@@ -44,7 +87,7 @@ const LoginPage = () => {
               {t("back")}
             </button>
           </div>
-        </div>
+        </form>
         <div className="login-footer">
           <a href="/register">{t("register")}</a>
         </div>

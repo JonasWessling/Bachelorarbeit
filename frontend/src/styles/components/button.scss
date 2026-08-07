@@ -19,13 +19,13 @@
   }
 
   &.btn-primary {
-    background-color: variables.$color-primary;
-    border: 2px solid variables.$color-primary;
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
     color: white;
 
     &:hover:not(:disabled) {
-      background-color: var(--hover);
-      border: 2px solid var(--hover);
+      background-color: var(--alt-accent);
+      border: 2px solid var(--alt-accent);
     }
   }
 

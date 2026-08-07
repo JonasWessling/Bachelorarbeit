@@ -3,9 +3,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import LanguageSwitcher from "./uicomponents/LanguageSwitcher.jsx";
 import DisplayMenuButton from "./uicomponents/DisplayMenuButton.jsx";
-import { eventBus } from "../event/eventbus.js";
-import ModalConstants from "../assets/constants/ModalConstants.json";
-import EventConstants from "../assets/constants/EventConstants.json";
+import LoginIcon from "@mui/icons-material/Login";
 import { useTranslation } from "react-i18next";
 
 const Navbar = (props) => {
@@ -26,13 +24,6 @@ const Navbar = (props) => {
     return <DarkModeIcon />;
   };
 
-  const openLoginModal = () => {
-    eventBus.emit(ModalConstants.OpenModal, {
-      event: EventConstants.showLoginModal,
-      modalId: ModalConstants.ModalIDs.LoginModal,
-    });
-  };
-
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -41,13 +32,10 @@ const Navbar = (props) => {
 
       <ul className="navbar-menu">
         <li className="navbar-item">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/login">{t("login")}</Link>
+          <Link to="/login">
+            <LoginIcon />
+            <div className="pl-2">{t("login")}</div>
+          </Link>
         </li>
         <li className="navbar-item">
           <LanguageSwitcher />
