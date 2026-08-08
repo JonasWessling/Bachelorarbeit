@@ -40,13 +40,13 @@
 
   .custom-dropdown-menu:hover {
     border-color: var(--alt-hover);
-    box-shadow: 0 0 0 2px var(--alt-hover);
+    box-shadow: 0 0 0 1px var(--alt-hover);
   }
 
   .custom-dropdown-menu:focus {
     outline: none;
     border-color: var(--alt-hover);
-    box-shadow: 0 0 0 2px var(--alt-hover);
+    box-shadow: 0 0 0 1px var(--alt-hover);
   }
 
   .custom-dropdown-menu:disabled {
@@ -88,7 +88,7 @@
 
   .custom-checkbox-input:hover {
     border-color: var(--alt-hover);
-    box-shadow: 0 0 0 2px var(--alt-hover);
+    box-shadow: 0 0 0 1px var(--alt-hover);
   }
 
   .custom-checkbox-label {
@@ -121,7 +121,7 @@
     &:focus {
       outline: none;
       border-color: var(--alt-hover);
-      box-shadow: 0 0 0 2px var(--alt-hover);
+      box-shadow: 0 0 0 1px var(--alt-hover);
     }
 
     &:disabled {
@@ -132,7 +132,7 @@
 
     &.error {
       border-color: variables.$color-danger;
-      box-shadow: 0 0 0 2px color.change(variables.$color-danger, $alpha: 0.15);
+      box-shadow: 0 0 0 1px color.change(variables.$color-danger, $alpha: 0.15);
     }
 
   }
@@ -142,4 +142,63 @@
     color: variables.$color-danger
   }
 }
+
+.searchbar {
+  width: 100%;
+  display: flex;
+
+  .search-input-wrapper {
+    position: relative;
+    width: 100%;
+
+    input {
+      padding: variables.$spacing-md 40px variables.$spacing-md variables.$spacing-md;
+      width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: variables.$border-radius 0 0 variables.$border-radius;
+      font-size: var(--font-size);
+      font-weight: 500;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      height: 48px;
+
+      &:focus {
+        outline: none;
+        border-color: var(--alt-hover);
+        box-shadow: 0 0 0 1px var(--alt-hover);
+      }
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      padding: 0;
+
+      &:hover {
+        color: var(--alt-hover);
+      }
+    }
+  }
+
+  .search-btn {
+    border-radius: 0 variables.$border-radius variables.$border-radius 0;
+    background-color: var(--accent);
+    color: white;
+    padding: 0 variables.$spacing-md;
+    border: none;
+    cursor: pointer;
+    height: 48px;
+
+    &:hover {
+      background-color: var(--alt-accent);
+    }
+  }
+}
+
 

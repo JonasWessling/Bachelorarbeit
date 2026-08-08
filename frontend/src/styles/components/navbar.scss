@@ -58,6 +58,20 @@
     }
   }
 
+  .navbar-item-button {
+    display: flex;
+    align-items: center;
+    padding: 0 variables.$spacing-lg;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color variables.$transition-duration variables.$transition-timing;
+
+    &:hover {
+      background-color: var(--hover);
+    }
+  }
+
   .navbar-icon-button {
     display: flex;
     align-items: center;

@@ -1,5 +1,10 @@
 {
   "login": "Login",
+  "logout": "Logout",
+  "loginFailed": "Login failed. Please check your email and password.",
+  "changeLanguage": "Change language",
+  "changeDisplaySettings": "Change display settings",
+  "toggleDarkMode": "Toggle dark mode",
   "email": "Email",
   "password": "Password",
   "invalidEmail": "Please enter a valid email address.",
@@ -33,5 +38,17 @@
   "medium": "Medium",
   "default": "Default",
   "large": "Large",
-  "extraLarge": "Extra large"
+  "extraLarge": "Extra large",
+
+  "here": "here",
+
+  "search": "Search...",
+
+  "simpleLanguage": "Simple Language",
+  "imprint": "Imprint",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfService": "Terms of Service",
+  "contact": "Contact",
+
+  "noAccount": "Don't have an account yet? Register <1>here</1>."
 }

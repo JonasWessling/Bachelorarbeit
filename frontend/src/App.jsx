@@ -38,20 +38,38 @@ const Layout = () => {
   const showNav = !hideNavBarOn.includes(location.pathname);
   const prefTheme = localStorage.getItem("theme");
   const [theme, setTheme] = useState(prefTheme || "light");
+  const savedSettings = localStorage.getItem("fontSettings");
 
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", theme === "dark");
-    localStorage.setItem("theme", theme);
+    handleThemeChange();
   }, [theme]);
+
+  useEffect(() => {
+    handleLoadSettingsOnMount();
+  }, []);
 
   const setAndSaveTheme = (theme) => {
     localStorage.setItem("theme", theme);
     setTheme(theme);
   };
 
-  useEffect(() => {
+  const handleThemeChange = () => {
+    document.body.classList.toggle("dark-mode", theme === "dark");
+    localStorage.setItem("theme", theme);
     try {
-      const savedSettings = localStorage.getItem("fontSettings");
+      if (savedSettings) {
+        const settings = JSON.parse(savedSettings);
+        settings.highContrast = false;
+        localStorage.setItem("fontSettings", JSON.stringify(settings));
+      }
+    } catch (error) {
+      console.error("Error loading font settings:", error);
+    }
+    document.body.classList.toggle("high-contrast", false);
+  };
+
+  const handleLoadSettingsOnMount = () => {
+    try {
       if (savedSettings) {
         const settings = JSON.parse(savedSettings);
         document.documentElement.style.setProperty(
@@ -71,7 +89,7 @@ const Layout = () => {
     } catch (error) {
       console.error("Error loading font settings:", error);
     }
-  }, []);
+  };
 
   return (
     <div className="app-layout">

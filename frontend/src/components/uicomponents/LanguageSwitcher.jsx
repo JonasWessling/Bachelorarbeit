@@ -38,7 +38,11 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="languageDropdown language-switcher" ref={dropdownRef}>
+    <div
+      className="languageDropdown language-switcher"
+      ref={dropdownRef}
+      title={t("changeLanguage")}
+    >
       <button
         className={`languageDropdown__trigger ${isOpen ? "is-open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}

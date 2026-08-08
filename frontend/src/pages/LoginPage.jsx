@@ -1,15 +1,23 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import InputField from "../components/uicomponents/inputField.jsx";
 import { useState } from "react";
 import { isEmailValid } from "../common/common.js";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAllUsers } from "../store/features/users/usersSlice.js";
+import { userLoggedIn } from "../store/features/auth/authSlice.js";
+import Button from "../components/uicomponents/Button.jsx";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showMailError, setShowMailError] = useState(false);
+  const [showLoginError, setShowLoginError] = useState(false);
+  const users = useSelector(selectAllUsers);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +27,15 @@ const LoginPage = () => {
     }
 
     setShowMailError(false);
-    navigate("/");
+
+    const user = users.find((user) => user.email === email);
+    if (user && user.password === password) {
+      dispatch(userLoggedIn(user.username));
+      navigate("/");
+    } else {
+      setShowLoginError(true);
+      console.log("Login failed");
+    }
   };
 
   const handleEmailChange = (e) => {
@@ -32,8 +48,11 @@ const LoginPage = () => {
   };
 
   const handleEmailBlur = () => {
+    setShowLoginError(false);
     setShowMailError(!isEmailValid(email));
   };
+
+  const link = <a href="/register">{t("here")}</a>;
 
   return (
     <div className="login-container">
@@ -65,31 +84,35 @@ const LoginPage = () => {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              onBlur={() => setShowLoginError(false)}
               ariaLabel={t("password")}
               label={t("password")}
               required
               autoComplete="current-password"
+              hasError={showLoginError}
+              errorMessage={t("loginFailed")}
             />
           </div>
           <div className="form-group form-actions">
-            <button
+            <Button
               type="submit"
-              className="btn btn-primary"
+              variant="primary"
               disabled={!email || !password || showMailError}
-            >
-              {t("login")}
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
+              text={t("login")}
+            />
+            <Button
               onClick={() => navigate("/")}
-            >
-              {t("back")}
-            </button>
+              text={t("back")}
+              type="button"
+              variant="secondary"
+            />
           </div>
         </form>
         <div className="login-footer">
-          <a href="/register">{t("register")}</a>
+          <Trans i18nKey="noAccount">
+            Don't have an account? Click <a href="/register">here</a> to
+            register.
+          </Trans>
         </div>
       </div>
     </div>

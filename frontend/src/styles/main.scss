@@ -24,6 +24,7 @@ html {
   //Text
   --text-primary: #{variables.$light-text-primary};
   --text-secondary: #{variables.$light-text-secondary};
+  --text-highlight: #{variables.$light-highlight};
 
   //Accents
   --border-color: #{variables.$light-border};
@@ -93,6 +94,7 @@ body.dark-mode {
   //Text
   --text-primary: #{variables.$dark-text-primary};
   --text-secondary: #{variables.$dark-text-secondary};
+  --text-highlight: #{variables.$light-hover};
 
   //Accents
   --border-color: #{variables.$dark-border};
@@ -116,6 +118,7 @@ body.high-contrast {
 
   --text-primary: #{variables.$hc-text-primary};
   --text-secondary: #{variables.$hc-text-secondary};
+  --text-highlight: #{variables.$light-hover};
 
   //Accents
   --border-color: #{variables.$hc-border};

@@ -3,10 +3,14 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import { isEmailValid } from "../common/common.js";
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/features/users/usersSlice.js";
 
 const RegisterPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [showMailError, setShowMailError] = useState(false);
   const [showMailConfirmError, setShowMailConfirmError] = useState(false);
   const [showPasswordMismatchError, setShowPasswordMismatchError] =
@@ -44,6 +48,7 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateEmail() && validatePassword()) {
+      dispatch(addUser(userName, email, password));
       navigate("/login");
     }
   };

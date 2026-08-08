@@ -4,10 +4,20 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LanguageSwitcher from "./uicomponents/LanguageSwitcher.jsx";
 import DisplayMenuButton from "./uicomponents/DisplayMenuButton.jsx";
 import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCurrentUser,
+  userLoggedOut,
+} from "../store/features/auth/authSlice.js";
 
 const Navbar = (props) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const user = useSelector(selectCurrentUser);
+
+  const isLoggedIn = !!user;
 
   const toggleTheme = () => {
     if (props.theme === "dark") {
@@ -24,6 +34,32 @@ const Navbar = (props) => {
     return <DarkModeIcon />;
   };
 
+  const loginButton = () => {
+    const logOutClicked = () => {
+      dispatch(userLoggedOut());
+    };
+
+    if (isLoggedIn) {
+      return (
+        <button
+          onClick={logOutClicked}
+          type="button"
+          title={t("logout")}
+          className="navbar-item-button"
+        >
+          <LogoutIcon />
+          <div className="pl-2">{user}</div>
+        </button>
+      );
+    }
+    return (
+      <Link to="/login" className="navbar-item-button">
+        <LoginIcon />
+        <div className="pl-2">{t("login")}</div>
+      </Link>
+    );
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -31,12 +67,7 @@ const Navbar = (props) => {
       </div>
 
       <ul className="navbar-menu">
-        <li className="navbar-item">
-          <Link to="/login">
-            <LoginIcon />
-            <div className="pl-2">{t("login")}</div>
-          </Link>
-        </li>
+        <li className="navbar-item">{loginButton()}</li>
         <li className="navbar-item">
           <LanguageSwitcher />
         </li>
@@ -46,6 +77,7 @@ const Navbar = (props) => {
         className="navbar-icon-button"
         onClick={toggleTheme}
         aria-label="Toggle dark mode"
+        title={t("toggleDarkMode")}
       >
         {icon()}
       </button>

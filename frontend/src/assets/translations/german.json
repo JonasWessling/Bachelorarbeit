@@ -1,5 +1,10 @@
 {
   "login": "Anmelden",
+  "logout": "Abmelden",
+  "loginFailed": "Anmeldung fehlgeschlagen. Bitte überprüfe deine E-Mail-Adresse und dein Passwort.",
+  "changeLanguage": "Sprache ändern",
+  "changeDisplaySettings": "Darstellungseinstellungen ändern",
+  "toggleDarkMode": "Dunkelmodus umschalten",
   "email": "Email",
   "password": "Passwort",
   "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
@@ -33,5 +38,16 @@
   "medium": "Mittel",
   "default": "Normal",
   "large": "Groß",
-  "extraLarge": "Extra groß"
+  "extraLarge": "Extra groß",
+
+  "here": "hier",
+
+  "search": "Suche...",
+
+  "simpleLanguage": "Einfache Sprache",
+  "imprint": "Impressum",
+  "privacyPolicy": "Datenschutz",
+  "termsOfService": "Nutzungsbedingungen",
+  "contact": "Kontakt",
+  "noAccount": "Du hast noch kein Konto? Jetzt <1>hier</1> registrieren."
 }
