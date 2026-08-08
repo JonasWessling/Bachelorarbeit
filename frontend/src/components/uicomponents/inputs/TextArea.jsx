@@ -1,24 +1,21 @@
-import PropTypes from "prop-types";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
-const InputField = (props) => {
+const TextArea = (props) => {
   const css = classNames({
-    "custom-text-input": true,
+    "custom-text-area": true,
   });
-  const errorId = `${props.id}-error`;
 
-  const label = props.label + (props.required ? " *" : "");
+  const errorId = `${props.id}-error`;
 
   return (
     <div className={css}>
-      {props.label && <label htmlFor={props.id}>{label}</label>}
-      <input
+      <label htmlFor={props.id}>{props.label}</label>
+      <textarea
         id={props.id}
         name={props.name}
-        className={props.hasError ? "error" : ""}
         aria-invalid={props.hasError}
         aria-describedby={props.hasError ? errorId : undefined}
-        type={props.type}
         placeholder={props.placeholder}
         onChange={props.onChange}
         aria-label={props.ariaLabel}
@@ -26,19 +23,20 @@ const InputField = (props) => {
         onFocus={props.onFocus}
         onBlur={props.onBlur}
         autoComplete={props.autoComplete}
+        cols={props.columns}
+        rows={props.rows}
       />
       {props.hasError && <p id={errorId}>{props.errorMessage}</p>}
     </div>
   );
 };
 
-export default InputField;
+export default TextArea;
 
-InputField.propTypes = {
+TextArea.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
-  type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func,
@@ -48,4 +46,6 @@ InputField.propTypes = {
   errorMessage: PropTypes.string,
   hasError: PropTypes.bool,
   autoComplete: PropTypes.string,
+  columns: PropTypes.string,
+  rows: PropTypes.string,
 };

@@ -3,7 +3,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
-import { ContactPage } from "@mui/icons-material";
+import ContactPage from "./pages/ContactPage.jsx";
 
 export const routes = (
   <Routes>

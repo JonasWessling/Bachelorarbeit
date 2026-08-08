@@ -46,3 +46,25 @@
 .is-highlighted-text {
   color: var(--accent);
 }
+
+.background-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.background-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.rounded {
+  border-radius: variables.$border-radius;
+}
+
+.is-danger-color {
+  color: variables.$color-danger
+}
+
+.is-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 2px var(--border-color);
+}

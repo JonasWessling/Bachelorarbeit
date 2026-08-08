@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import CloseIcon from "@mui/icons-material/Close";
-import Dropdown from "../uicomponents/Dropdown.jsx";
+import Dropdown from "../uicomponents/inputs/Dropdown.jsx";
 import { useEffect, useRef, useState } from "react";
-import Checkbox from "../uicomponents/Checkbox.jsx";
+import Checkbox from "../uicomponents/inputs/Checkbox.jsx";
 
 const defaultSettings = {
   fontSize: "16px",

@@ -67,6 +67,9 @@ const Navbar = (props) => {
       </div>
 
       <ul className="navbar-menu">
+        <li className="navbar-item">
+          <Link to="/">{t("home")}</Link>
+        </li>
         <li className="navbar-item">{loginButton()}</li>
         <li className="navbar-item">
           <LanguageSwitcher />

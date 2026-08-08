@@ -31,6 +31,7 @@
   "reset": "Reset",
   "back": "Back",
   "goHome": "Go home",
+  "home": "Home",
 
   "pageNotFound": "Oops! Page not found.",
 
@@ -43,6 +44,10 @@
   "here": "here",
 
   "search": "Search...",
+
+  "email_placeholder": "your@mail.com",
+  "tel_placeholder": "0123456789",
+  "text_area_placeholder": "Enter your message...",
 
   "simpleLanguage": "Simple Language",
   "imprint": "Imprint",

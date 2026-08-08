@@ -31,6 +31,7 @@
   "reset": "Zurücksetzen",
   "back": "Zurück",
   "goHome": "Zur Startseite",
+  "home": "Startseite",
 
   "pageNotFound": "Hoppla! Seite nicht gefunden.",
 
@@ -43,6 +44,10 @@
   "here": "hier",
 
   "search": "Suche...",
+
+  "email_placeholder": "beispiel@mail.de",
+  "tel_placeholder": "0123456789",
+  "text_area_placeholder": "Geben Sie Ihre Nachricht ein...",
 
   "simpleLanguage": "Einfache Sprache",
   "imprint": "Impressum",

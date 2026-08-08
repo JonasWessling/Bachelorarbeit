@@ -1,4 +1,4 @@
-import InputField from "../components/uicomponents/inputField.jsx";
+import InputField from "../components/uicomponents/inputs/InputField.jsx";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -90,7 +90,7 @@ const RegisterPage = () => {
               id="email"
               type="email"
               name="email"
-              placeholder={t("email")}
+              placeholder={t("email_placeholder")}
               onChange={handleEmailChange}
               onBlur={() => setShowMailError(!isEmailValid(email))}
               ariaLabel={t("email")}
@@ -105,7 +105,7 @@ const RegisterPage = () => {
               id="email-confirm"
               type="email"
               name="email-confirm"
-              placeholder={t("email_confirm")}
+              placeholder={t("email_placeholder")}
               onChange={handleEmailConfirmChange}
               label={t("email_confirm")}
               onBlur={() => setShowMailConfirmError(email !== emailConfirm)}

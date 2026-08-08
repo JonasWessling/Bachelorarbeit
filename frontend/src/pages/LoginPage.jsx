@@ -1,12 +1,12 @@
 import { Trans, useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
-import InputField from "../components/uicomponents/inputField.jsx";
+import { Link, useNavigate } from "react-router";
+import InputField from "../components/uicomponents/inputs/InputField.jsx";
 import { useState } from "react";
 import { isEmailValid } from "../common/common.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAllUsers } from "../store/features/users/usersSlice.js";
 import { userLoggedIn } from "../store/features/auth/authSlice.js";
-import Button from "../components/uicomponents/Button.jsx";
+import Button from "../components/uicomponents/inputs/Button.jsx";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const LoginPage = () => {
     setShowMailError(!isEmailValid(email));
   };
 
-  const link = <a href="/register">{t("here")}</a>;
+  const link = <Link to="/register">{t("here")}</Link>;
 
   return (
     <div className="login-container">
@@ -66,7 +66,7 @@ const LoginPage = () => {
               id="email"
               type="email"
               name="email"
-              placeholder={t("email")}
+              placeholder={t("email_placeholder")}
               onChange={handleEmailChange}
               onBlur={handleEmailBlur}
               ariaLabel={t("email")}
@@ -110,7 +110,7 @@ const LoginPage = () => {
         </form>
         <div className="login-footer">
           <Trans i18nKey="noAccount">
-            Don't have an account? Click <a href="/register">here</a> to
+            Don't have an account? Click <Link to="/register">here</Link> to
             register.
           </Trans>
         </div>
