@@ -48,12 +48,30 @@
   "email_placeholder": "your@mail.com",
   "tel_placeholder": "0123456789",
   "text_area_placeholder": "Enter your message...",
+  "phone_number": "Phone number",
+  "message": "Message",
 
   "simpleLanguage": "Simple Language",
   "imprint": "Imprint",
   "privacyPolicy": "Privacy Policy",
   "termsOfService": "Terms of Service",
   "contact": "Contact",
+  "send": "Send",
+  "sendMessage": "Send message",
+  "contactForm": "Contact form",
 
-  "noAccount": "Don't have an account yet? Register <1>here</1>."
+  "openingHours": "Opening hours",
+  "socialMedia": "Social media",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "closed": "Closed",
+
+  "noAccount": "Don't have an account yet? Register <1>here</1>.",
+  "inquiry_address": "Your inquiry to: email@email.com",
+  "inquiry_text": "Please fill out the form below to send us your inquiry. We will get back to you as soon as possible."
 }

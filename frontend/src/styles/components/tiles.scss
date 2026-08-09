@@ -1,0 +1,82 @@
+@use "../variables";
+
+.bib-info-tile {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: var(--bg-secondary);
+  border-radius: variables.$border-radius;
+
+  .bib-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 0 auto;
+  }
+
+  .bib-info-section {
+    h3 {
+      color: var(--info-header);
+      font-size: calc(var(--font-size) * 1.25);
+      font-weight: 600;
+      border-bottom: 1px solid var(--info-header);
+    }
+
+    .hours-list {
+      display: flex;
+      flex-direction: column;
+      gap: variables.$spacing-sm;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: variables.$spacing-sm 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: calc(var(--font-size) * 0.9);
+
+      .day {
+        font-weight: 500;
+        color: var(--text-primary);
+      }
+
+      .time {
+        color: var(--text-primary);
+      }
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: variables.$spacing-sm;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: variables.$spacing-sm;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: calc(var(--font-size) * 0.9);
+      padding: variables.$spacing-sm;
+      border-radius: variables.$border-radius;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: variables.$spacing-md;
+      margin-top: 8px;
+    }
+
+    .social-item {
+      font-size: 36px;
+      color: var(--info-header);
+
+      svg {
+        width: 48px;
+        height:48px;
+      }
+    }
+  }
+}

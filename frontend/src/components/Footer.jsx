@@ -1,8 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { eventBus } from "../event/eventbus.js";
+import ModalConstants from "../assets/constants/ModalConstants.json";
+import EventConstants from "../assets/constants/EventConstants.json";
 
 const Footer = () => {
   const { t } = useTranslation();
+
+  const openContactModal = () => {
+    eventBus.emit(ModalConstants.OpenModal, {
+      event: EventConstants.ContactModal,
+      modalId: ModalConstants.ModalIDs.ContactModal,
+    });
+  };
 
   return (
     <div className="custom-footer">
@@ -19,7 +29,7 @@ const Footer = () => {
         <Link to="/terms-of-service">{t("termsOfService")}</Link>
       </div>
       <div className="custom-footer-item">
-        <Link to="/contact">{t("contact")}</Link>
+        <button onClick={openContactModal}>{t("contact")}</button>
       </div>
     </div>
   );

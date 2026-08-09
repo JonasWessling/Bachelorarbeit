@@ -23,7 +23,7 @@
     padding: 0;
     cursor: pointer;
 
-    a {
+    a, button {
       display: flex;
       align-items: center;
       padding: 0 variables.$spacing-md;

@@ -38,6 +38,7 @@ html {
 
   //Special
   --btn-scd-border: #{variables.$light-highlight};
+  --info-header :#{variables.$light-highlight};
 
 
   --font-family: Arial, sans-serif;
@@ -107,7 +108,8 @@ body.dark-mode {
   --alt-accent: #{variables.$light-hover};
 
   //Special
-  --btn-scd-border: #{variables.$dark-border}
+  --btn-scd-border: #{variables.$dark-border};
+  --info-header :#{variables.$light-hover};
 }
 
 body.high-contrast {
@@ -129,6 +131,7 @@ body.high-contrast {
   --alt-hover: #{variables.$light-hover};
   --accent: #{variables.$light-hover};
   --alt-accent: #{variables.$hc-highlight};
+  --info-header :#{variables.$light-hover};
 
   //Special
   --btn-scd-border: #{variables.$color-white}
@@ -147,5 +150,7 @@ body.high-contrast button {
 @include meta.load-css('components/languageSwitcher.scss');
 @include meta.load-css('components/modal.scss');
 @include meta.load-css('components/inputs.scss');
-@include meta.load-css('helpers.scss');
 @include meta.load-css('components/footer.scss');
+@include meta.load-css('components/tiles.scss');
+@include meta.load-css('components/news.scss');
+@include meta.load-css('helpers.scss');

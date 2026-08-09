@@ -48,11 +48,30 @@
   "email_placeholder": "beispiel@mail.de",
   "tel_placeholder": "0123456789",
   "text_area_placeholder": "Geben Sie Ihre Nachricht ein...",
+  "phone_number": "Telefonnummer",
+  "message": "Nachricht",
 
   "simpleLanguage": "Einfache Sprache",
   "imprint": "Impressum",
   "privacyPolicy": "Datenschutz",
   "termsOfService": "Nutzungsbedingungen",
   "contact": "Kontakt",
-  "noAccount": "Du hast noch kein Konto? Jetzt <1>hier</1> registrieren."
+  "send": "Senden",
+  "sendMessage": "Nachricht senden",
+  "contactForm": "Kontaktformular",
+
+  "openingHours": "Öffnungszeiten",
+  "socialMedia": "Soziale Medien",
+  "monday": "Montag",
+  "tuesday": "Dienstag",
+  "wednesday": "Mittwoch",
+  "thursday": "Donnerstag",
+  "friday": "Freitag",
+  "saturday": "Samstag",
+  "sunday": "Sonntag",
+  "closed": "Geschlossen",
+
+  "noAccount": "Du hast noch kein Konto? Jetzt <1>hier</1> registrieren.",
+  "inquiry_address": "Deine Anfrage an: email@email.com",
+  "inquiry_text": "Bitte gib deine Anfrage ein und wir werden uns so schnell wie möglich bei dir melden."
 }

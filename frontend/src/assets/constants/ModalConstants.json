@@ -2,6 +2,7 @@
   "OpenModal": "modal:open",
   "CloseModal": "modal:close",
   "ModalIDs": {
-    "FontMenu": "fontMenuModal"
+    "FontMenu": "fontMenuModal",
+    "ContactModal": "contactModal"
   }
 }

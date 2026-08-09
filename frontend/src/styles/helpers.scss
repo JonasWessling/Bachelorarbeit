@@ -63,6 +63,13 @@
   color: variables.$color-danger
 }
 
+.is-accent-h1 {
+  color: var(--accent);
+  font-size: calc(1.5 * var(--font-size));
+  font-weight: bold;
+  margin-top: 4px;
+}
+
 .is-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
