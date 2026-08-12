@@ -20,7 +20,7 @@ const ContactModal = ({ onClose }) => {
       </div>
       <div className="modal-body">
         <div className="p-3 is-flex is-flex-direction-column">
-          <h1 className="mt-3">{t("inquiry_text")}</h1>
+          <p>{t("inquiry_text")}</p>
           <p className="mt-5 is-bold">{t("inquiry_address")}</p>
           <div className="columns is-vcentered mt-2">
             <div className="column is-half">

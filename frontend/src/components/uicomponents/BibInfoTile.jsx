@@ -23,15 +23,6 @@ const BibInfoTile = ({ type }) => {
     address: "Universitätsboulevard 12, 28359 Bremen",
   };
 
-  const foodRules = {
-    allowed: ["Getränke", "Snacks", "Obst"],
-    notAllowed: [
-      "Warme Speisen",
-      "Fettiges Essen",
-      "Essen in Bechern oder Dosen",
-    ],
-  };
-
   const openHoursSection = () => {
     return (
       <section className="bib-info-tile">
@@ -64,7 +55,9 @@ const BibInfoTile = ({ type }) => {
               <a href={`mailto:${contactInfo.email}`} className="contact-item">
                 {contactInfo.email}
               </a>
-              <div className="contact-item">{contactInfo.address}</div>
+              <div className="contact-item is-clickable">
+                {contactInfo.address}
+              </div>
             </div>
           </div>
         </div>
