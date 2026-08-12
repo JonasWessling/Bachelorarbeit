@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
-    background-color: var(--alt-highlight);
+    background-color: var(--highlight);
     color: white;
 
     h1 {
@@ -80,25 +80,29 @@
   // Font modal preview specifics
 
   .modal-content.high-contrast-preview {
-    --bg-primary: #000000;
-    --bg-secondary: #121212;
-    --bg-tertiary: #1f1f1f;
-    --text-primary: #ffffff;
-    --text-secondary: #f0f0f0;
-    --border-color: #ffffff;
-    --highlight: #1f1f1f;
-    --alt-highlight: #{variables.$hc-highlight};
+    --bg-primary: #{variables.$hc-bg-primary};
+    --bg-secondary: #{variables.$hc-bg-secondary};
+    --bg-tertiary: #{variables.$hc-bg-tertiary};
+    --bg-special: #{variables.$hc-bg-secondary};
+
+    --text-primary: #{variables.$hc-text-primary};
+    --text-secondary: #{variables.$hc-text-secondary};
+    --text-highlight: #{variables.$light-hover};
+
+    //Accents
+    --border-color: #{variables.$hc-border};
     --alt-border-color: #{variables.$hc-highlight};
-    --bg-special: #121212;
+    --highlight: #{variables.$light-hover};
+    --alt-highlight: #{variables.$hc-bg-secondary};
     --hover: #{variables.$light-hover};
     --alt-hover: #{variables.$light-hover};
     --accent: #{variables.$light-hover};
     --alt-accent: #{variables.$hc-highlight};
+    --info-header: #{variables.$light-hover};
 
+    //Special
     --btn-scd-border: #{variables.$color-white};
-
-    background-color: var(--bg-special);
-    color: var(--text-primary);
+    --root-border: #{variables.$hc-bg-tertiary};
   }
 
   .modal-content.high-contrast-preview select,
@@ -112,8 +116,13 @@
     --bg-secondary: #{variables.$light-bg-secondary};
     --bg-tertiary: #{variables.$light-bg-tertiary};
     --bg-special: #{variables.$light-bg-primary};
+
+    //Text
     --text-primary: #{variables.$light-text-primary};
     --text-secondary: #{variables.$light-text-secondary};
+    --text-highlight: #{variables.$light-highlight};
+
+    //Accents
     --border-color: #{variables.$light-border};
     --alt-border-color: #{variables.$light-highlight};
     --highlight: #{variables.$light-highlight};
@@ -123,7 +132,11 @@
     --accent: #{variables.$light-highlight};
     --alt-accent: #{variables.$light-hover};
 
+    //Special
     --btn-scd-border: #{variables.$light-highlight};
+    --info-header: #{variables.$light-highlight};
+
+    --root-border: #{variables.$light-text-secondary};
 
     background-color: var(--bg-special);
     color: var(--text-primary);
@@ -134,17 +147,26 @@
     --bg-secondary: #{variables.$dark-bg-secondary};
     --bg-tertiary: #{variables.$dark-bg-tertiary};
     --bg-special: #{variables.$dark-bg-secondary};
+
+    //Text
     --text-primary: #{variables.$dark-text-primary};
     --text-secondary: #{variables.$dark-text-secondary};
-    --border-color: #{variables.$dark-border};
-    --alt-border-color: #{variables.$dark-text-primary};
-    --highlight: #{variables.$dark-highlight};
-    --alt-highlight: #{variables.$hc-bg-secondary};
-    --hover: #{variables.$dark-hover};
-    --accent: #{variables.$light-highlight};
-    --alt-accent: #{variables.$light-hover};
+    --text-highlight: #{variables.$dark-highlight};
 
-    --btn-scd-border: #{variables.$dark-border}
+    //Accents
+    --border-color: #{variables.$dark-border};
+    --alt-border-color: #{variables.$dark-border};
+    --highlight: #{variables.$dark-highlight};
+    --alt-highlight: #{variables.$dark-hover};
+    --hover: #{variables.$dark-hover};
+    --alt-hover: #{variables.$dark-highlight};
+    --accent: #{variables.$dark-highlight};
+    --alt-accent: #{variables.$dark-hover};
+
+    //Special
+    --btn-scd-border: #{variables.$dark-text-primary};
+    --info-header: #{variables.$dark-text-primary};
+    --root-border: #{variables.$dark-bg-secondary};
   }
 
   .modal-content.normal-contrast-preview select,

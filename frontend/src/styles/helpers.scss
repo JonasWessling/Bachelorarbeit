@@ -63,6 +63,10 @@
   color: variables.$color-danger
 }
 
+.is-width-40-percent {
+  width: 40%
+}
+
 .is-accent-h1 {
   color: var(--accent);
   font-size: calc(1.5 * var(--font-size));

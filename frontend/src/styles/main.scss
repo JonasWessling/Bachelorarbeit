@@ -38,8 +38,9 @@ html {
 
   //Special
   --btn-scd-border: #{variables.$light-highlight};
-  --info-header :#{variables.$light-highlight};
+  --info-header: #{variables.$light-highlight};
 
+  --root-border: #{variables.$light-text-secondary};
 
   --font-family: Arial, sans-serif;
   --font-size: 16px;
@@ -56,12 +57,14 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+
+
 }
 
 main {
   flex: 1;
 }
-
+ 
 #root {
   background-color: var(--bg-primary);
   margin-left: variables.$app-padding;
@@ -71,6 +74,7 @@ main {
   flex-direction: column;
   color: var(--text-primary);
   flex: 1;
+  box-shadow: 0 0 10px var(--root-border);
 }
 
 .app-layout {
@@ -95,21 +99,22 @@ body.dark-mode {
   //Text
   --text-primary: #{variables.$dark-text-primary};
   --text-secondary: #{variables.$dark-text-secondary};
-  --text-highlight: #{variables.$light-hover};
+  --text-highlight: #{variables.$dark-highlight};
 
   //Accents
   --border-color: #{variables.$dark-border};
-  --alt-border-color: #{variables.$dark-text-primary};
+  --alt-border-color: #{variables.$dark-border};
   --highlight: #{variables.$dark-highlight};
-  --alt-highlight: #{variables.$hc-bg-secondary};
+  --alt-highlight: #{variables.$dark-hover};
   --hover: #{variables.$dark-hover};
-  --alt-hover: #{variables.$light-highlight};
-  --accent: #{variables.$light-highlight};
-  --alt-accent: #{variables.$light-hover};
+  --alt-hover: #{variables.$dark-highlight};
+  --accent: #{variables.$dark-highlight};
+  --alt-accent: #{variables.$dark-hover};
 
   //Special
-  --btn-scd-border: #{variables.$dark-border};
-  --info-header :#{variables.$light-hover};
+  --btn-scd-border: #{variables.$dark-text-primary};
+  --info-header: #{variables.$dark-text-primary};
+  --root-border: #{variables.$dark-bg-secondary};
 }
 
 body.high-contrast {
@@ -125,16 +130,17 @@ body.high-contrast {
   //Accents
   --border-color: #{variables.$hc-border};
   --alt-border-color: #{variables.$hc-highlight};
-  --highlight: #{variables.$hc-highlight};
+  --highlight: #{variables.$light-hover};
   --alt-highlight: #{variables.$hc-bg-secondary};
   --hover: #{variables.$light-hover};
   --alt-hover: #{variables.$light-hover};
   --accent: #{variables.$light-hover};
   --alt-accent: #{variables.$hc-highlight};
-  --info-header :#{variables.$light-hover};
+  --info-header: #{variables.$light-hover};
 
   //Special
-  --btn-scd-border: #{variables.$color-white}
+  --btn-scd-border: #{variables.$color-white};
+  --root-border: #{variables.$hc-bg-tertiary};
 }
 
 body.high-contrast select,
@@ -143,6 +149,8 @@ body.high-contrast button {
   accent-color: var(--hover);
 }
 
+
+ 
 // Import all component styles
 @include meta.load-css('components/login.scss');
 @include meta.load-css('components/navbar.scss');
@@ -154,3 +162,4 @@ body.high-contrast button {
 @include meta.load-css('components/tiles.scss');
 @include meta.load-css('components/news.scss');
 @include meta.load-css('helpers.scss');
+@include meta.load-css('components/landingPage.scss');

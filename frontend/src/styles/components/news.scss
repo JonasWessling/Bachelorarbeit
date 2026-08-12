@@ -24,7 +24,6 @@
     border: 1px solid var(--border-color);
     border-radius: variables.$border-radius;
     padding: variables.$spacing-sm;
-    transition: all variables.$transition-duration variables.$transition-timing;
 
     &:hover {
       box-shadow: 0 2px 8px rgba(11, 83, 81, 0.15);
@@ -107,5 +106,24 @@
         color: var(--bg-primary);
       }
     }
+  }
+}
+
+.article-section {
+  width: 100%;
+  margin-bottom: variables.$spacing-2xl;
+
+  .title {
+    color: var(--text-highlight);
+    font-weight: 600;
+    margin-bottom: variables.$spacing-md;
+    border-bottom: 2px solid var(--text-highlight);
+    padding-bottom: variables.$spacing-sm;
+    font-size: calc(var(--font-size) * 1.4);
+    width: 40%
+  }
+
+  .article-content {
+    margin-bottom: variables.$spacing-md;
   }
 }

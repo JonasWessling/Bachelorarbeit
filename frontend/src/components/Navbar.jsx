@@ -11,24 +11,26 @@ import {
   selectCurrentUser,
   userLoggedOut,
 } from "../store/features/auth/authSlice.js";
+import { useTheme } from "../provider/ThemeProvider.jsx";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const user = useSelector(selectCurrentUser);
+  const { theme, setTheme } = useTheme();
 
   const isLoggedIn = !!user;
 
   const toggleTheme = () => {
-    if (props.theme === "dark") {
-      props.setTheme("light");
+    if (theme === "dark") {
+      setTheme("light");
       return;
     }
-    props.setTheme("dark");
+    setTheme("dark");
   };
 
   const icon = () => {
-    if (props.theme === "light") {
+    if (theme === "light") {
       return <LightModeIcon />;
     }
     return <DarkModeIcon />;
