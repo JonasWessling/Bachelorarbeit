@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router";
-import { useEffect, useState } from "react";
-import { loadBooks } from "../common/BookSearch.js";
+import { useEffect, useRef, useState } from "react";
+import { loadBooks } from "../common/bookSearch.js";
 import BookCard from "../components/uicomponents/BookCard.jsx";
 
 const BookPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
 
@@ -21,10 +21,21 @@ const BookPage = () => {
       return;
     }
 
+    fetchBooks();
+  }, [query]);
+
+  useEffect(() => {
+    if (query) {
+      setBooks([]);
+      fetchBooks();
+    }
+  }, [i18n.language]);
+
+  const fetchBooks = () => {
     setLoading(true);
     setError(null);
 
-    loadBooks(query)
+    loadBooks(query, i18n.language)
       .then((data) => {
         setBooks(data.results || []);
       })
@@ -35,7 +46,7 @@ const BookPage = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [query]);
+  };
 
   return (
     <div>

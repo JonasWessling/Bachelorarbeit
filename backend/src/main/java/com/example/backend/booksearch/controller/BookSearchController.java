@@ -2,8 +2,11 @@ package com.example.backend.booksearch.controller;
 
 import com.example.backend.booksearch.model.BookSearchResponse;
 import com.example.backend.booksearch.service.BookSearchService;
+import com.example.backend.utils.LocaleOptimizer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
@@ -17,7 +20,9 @@ public class BookSearchController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<BookSearchResponse> searchBooks(@RequestParam String query) {
-        return ResponseEntity.ok(bookSearchService.searchBooks(query));
+    public ResponseEntity<BookSearchResponse> searchBooks(@RequestParam String query, Locale locale) {
+        Locale optimizedLocale = LocaleOptimizer.optimize(locale);
+
+        return ResponseEntity.ok(bookSearchService.searchBooks(query, optimizedLocale));
     }
 }

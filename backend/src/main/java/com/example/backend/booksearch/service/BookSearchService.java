@@ -2,6 +2,7 @@ package com.example.backend.booksearch.service;
 
 import com.example.backend.booksearch.model.Book;
 import com.example.backend.booksearch.model.BookSearchResponse;
+import com.example.backend.utils.LocaleOptimizer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class BookSearchService {
@@ -20,13 +22,20 @@ public class BookSearchService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
+    private String count = "&c=10";
+    private String format = "&fo=json";
+
     public BookSearchService(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
     }
 
-    public BookSearchResponse searchBooks(String searchTerm) {
-        String apiUrl = URL + "?q=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8) + "&c=10&fo=json";
+    public BookSearchResponse searchBooks(String searchTerm, Locale locale) {
+
+        String lang = "&fa=language:" + LocaleOptimizer.getUrlLangValue(locale);
+
+        String apiUrl = URL + "?q=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8) + lang + count + format;
+
 
         try {
             String responseBody = restTemplate.getForObject(apiUrl, String.class);
