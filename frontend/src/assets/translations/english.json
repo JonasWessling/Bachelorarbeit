@@ -5,6 +5,8 @@
   "changeLanguage": "Change language",
   "changeDisplaySettings": "Change display settings",
   "toggleDarkMode": "Toggle dark mode",
+  "close": "Close",
+  "appName": "My App",
   "email": "Email",
   "password": "Password",
   "invalidEmail": "Please enter a valid email address.",
@@ -32,6 +34,7 @@
   "back": "Back",
   "goHome": "Go home",
   "home": "Home",
+  "clearInput": "Clear input",
 
   "pageNotFound": "Oops! Page not found.",
 
@@ -73,5 +76,71 @@
 
   "noAccount": "Don't have an account yet? Register <1>here</1>.",
   "inquiry_address": "Your inquiry to: email@email.com",
-  "inquiry_text": "Please fill out the form below to send us your inquiry. We will get back to you as soon as possible."
+  "inquiry_text": "Please fill out the form below to send us your inquiry. We will get back to you as soon as possible.",
+
+  "news": "News",
+  "more_news": "View all news",
+  "moreInfo": "More info",
+  "foodRules": "Food rules",
+  "foodRulesAllowedAlt": "Allowed food rules",
+  "foodRulesForbiddenAlt": "Forbidden food rules",
+  "telephone": "Tel",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "youtube": "YouTube",
+  "bookPage": {
+    "title": "Book page",
+    "description": "This is the book page."
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Welcome",
+      "title": "Library - learning space, research and exchange",
+      "text": "Discover digital services, quiet workspaces and inspiring events - all in one place for study, research and everyday life.",
+      "searchCatalog": "Browse catalog",
+      "learnMore": "Learn more"
+    },
+    "stats": {
+      "media": "Media",
+      "digital": "Digital",
+      "studySeats": "Study seats"
+    },
+    "sections": {
+      "about": {
+        "title": "About the library",
+        "content": "Our library combines modern information services with a comfortable learning environment. In addition to print media, you will find digital resources, flexible workspaces and a range of services. Whether for focused work, creative projects or quick research - the library gives you space, quiet and support."
+      },
+      "studySpace": {
+        "title": "Quiet place to study",
+        "content": "The library is a place of calm and concentration. Bright rooms, ergonomic workspaces and a pleasant level of background noise create ideal conditions for productive learning. Visitors find inspiration, support and many ways to deepen their knowledge."
+      },
+      "digital": {
+        "title": "Digital services",
+        "content": "Alongside a large media collection, the library offers many digital services: online catalogs, e-books, databases and tools for academic research. These services enable flexible, location-independent work and support you in study, research and projects."
+      },
+      "community": {
+        "title": "Community and events",
+        "content": "As a meeting place for knowledge seekers, the library regularly hosts workshops, readings and information sessions. The open spaces encourage exchange, collaboration and shared learning - for students as well as external guests."
+      }
+    }
+  },
+  "newsCategories": {
+    "announcement": "Announcement",
+    "news": "Update",
+    "notice": "Notice"
+  },
+  "newsItems": {
+    "openingHours": {
+      "title": "New opening hours from September",
+      "content": "From September we will have extended opening hours. Monday to Friday: 08:00 - 22:00."
+    },
+    "digitalCollection": {
+      "title": "Digital collection expanded",
+      "content": "We have added 500 new e-books and 200 journals to our digital collection."
+    },
+    "holiday": {
+      "title": "Have a nice holiday!",
+      "content": "The library will be closed from 15/08 to 22/08. Enjoy the summer break!"
+    }
+  }
 }

@@ -18,7 +18,7 @@ const BibInfoTile = ({ type }) => {
   ];
 
   const contactInfo = {
-    phone: "Tel: (0421) 218 59500",
+    phone: "(0421) 218 59500",
     email: "suub@suub.uni-bremen.de",
     address: "Universitätsboulevard 12, 28359 Bremen",
   };
@@ -49,8 +49,12 @@ const BibInfoTile = ({ type }) => {
           <div className="bib-info-section">
             <h3>{t("contact")}</h3>
             <div className="contact-list">
-              <a href={`tel:${contactInfo.phone}`} className="contact-item">
-                {contactInfo.phone}
+              <a
+                href={`tel:${contactInfo.phone}`}
+                className="contact-item"
+                aria-label={`${t("telephone")}: ${contactInfo.phone}`}
+              >
+              {t("telephone")}: {contactInfo.phone}
               </a>
               <a href={`mailto:${contactInfo.email}`} className="contact-item">
                 {contactInfo.email}
@@ -77,7 +81,7 @@ const BibInfoTile = ({ type }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-item"
-                aria-label="Facebook"
+                aria-label={t("facebook")}
               >
                 <FacebookIcon aria-hidden="true" />
               </a>
@@ -86,7 +90,7 @@ const BibInfoTile = ({ type }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-item"
-                aria-label="Instagram"
+                aria-label={t("instagram")}
               >
                 <InstagramIcon aria-hidden="true" />
               </a>
@@ -95,7 +99,7 @@ const BibInfoTile = ({ type }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-item"
-                aria-label="YouTube"
+                aria-label={t("youtube")}
               >
                 <YouTubeIcon aria-hidden="true" />
               </a>

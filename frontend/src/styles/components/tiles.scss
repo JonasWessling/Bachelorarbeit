@@ -82,3 +82,61 @@
     }
   }
 }
+
+.book-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--surface);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.book-card__image img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.book-card__content {
+  flex: 1;
+}
+
+.book-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.book-card__author {
+  margin: 4px 0 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.book-card__description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .book-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .book-card__image img {
+    width: 160px;
+    height: 240px;
+  }
+}

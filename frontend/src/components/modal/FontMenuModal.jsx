@@ -24,7 +24,7 @@ const loadSettings = () => {
 
     return { ...defaultSettings, ...JSON.parse(savedSettings) };
   } catch (error) {
-    console.error("Fehler beim Laden der Font-Einstellungen:", error);
+    console.error("Error while loading settings:", error);
     return defaultSettings;
   }
 };
@@ -98,7 +98,7 @@ const FontMenuModal = ({ onClose }) => {
     <div ref={modalRootRef}>
       <div className="modal-header">
         <h1>{t("displaySettings")}</h1>
-        <button onClick={handleClose} aria-label="close">
+        <button onClick={handleClose} aria-label={t("close")}>
           <CloseIcon />
         </button>
       </div>

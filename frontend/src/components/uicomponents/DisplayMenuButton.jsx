@@ -19,7 +19,7 @@ const DisplayMenuButton = () => {
       type="button"
       onClick={openFontMenuModal}
       className="navbar-icon-button"
-      aria-label="Display Settings"
+      aria-label={t("changeDisplaySettings")}
       title={t("changeDisplaySettings")}
     >
       <AccessibilityNewIcon />

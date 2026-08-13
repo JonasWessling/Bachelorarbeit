@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Searchbar from "./search/Searchbar.jsx";
 import BibInfoTile from "../components/uicomponents/BibInfoTile.jsx";
 import NewsSection from "../components/NewsSection.jsx";
@@ -5,39 +6,37 @@ import FoodRules from "../components/FoodRules.jsx";
 import ArticleSection from "../components/uicomponents/ArticleSection.jsx";
 
 const LandingPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="content-padding landing-page">
       <section className="landing-hero rounded">
         <div className="landing-hero__content">
-          <span className="landing-hero__eyebrow">Willkommen</span>
-          <h1 className="is-accent-h1">
-            Bibliothek – Lernraum, Recherche und Austausch
-          </h1>
-          <p className="landing-hero__text">
-            Entdecken Sie digitale Angebote, ruhige Arbeitsplätze und
-            inspirierende Veranstaltungen – alles an einem Ort für Studium,
-            Forschung und Alltag.
-          </p>
+          <span className="landing-hero__eyebrow">{t("landing.hero.eyebrow")}</span>
+          <h1 className="is-accent-h1">{t("landing.hero.title")}</h1>
+          <p className="landing-hero__text">{t("landing.hero.text")}</p>
           <div className="landing-hero__actions">
             <button className="btn btn-primary rounded">
-              Katalog durchsuchen
+              {t("landing.hero.searchCatalog")}
             </button>
-            <button className="btn btn-secondary rounded">Mehr erfahren</button>
+            <button className="btn btn-secondary rounded">
+              {t("landing.hero.learnMore")}
+            </button>
           </div>
         </div>
 
         <div className="landing-hero__stats">
           <div className="stat-card">
             <strong>18k+</strong>
-            <span>Medien</span>
+            <span>{t("landing.stats.media")}</span>
           </div>
           <div className="stat-card">
             <strong>24/7</strong>
-            <span>Digital</span>
+            <span>{t("landing.stats.digital")}</span>
           </div>
           <div className="stat-card">
             <strong>18</strong>
-            <span>Studienplätze</span>
+            <span>{t("landing.stats.studySeats")}</span>
           </div>
         </div>
       </section>
@@ -50,56 +49,21 @@ const LandingPage = () => {
         <div className="column is-three-fifths landing-main rounded">
           <section className="news-section">
             <ArticleSection
-              title="Über die Bibliothek"
-              content={[
-                <p>
-                  Unsere Bibliothek verbindet moderne Informationsangebote mit
-                  einer angenehmen Lernumgebung. Neben klassischen Medien stehen
-                  Ihnen digitale Ressourcen, flexible Arbeitsplätze und
-                  verschiedene Serviceangebote zur Verfügung. Ob für
-                  konzentriertes Arbeiten, kreative Projekte oder kurze
-                  Recherche – die Bibliothek bietet Ihnen Raum, Ruhe und
-                  Unterstützung.
-                </p>,
-              ]}
+              title={t("landing.sections.about.title")}
+              content={[t("landing.sections.about.content")]}
             />
             <ArticleSection
-              title="Ruhiger Lernort"
-              content={[
-                <p>
-                  Die Bibliothek ist ein Ort der Ruhe und Konzentration. Helle
-                  Räume, ergonomische Arbeitsplätze und eine angenehme
-                  Geräuschkulisse schaffen ideale Bedingungen für produktives
-                  Lernen. Besucherinnen und Besucher finden hier Inspiration,
-                  Unterstützung und vielfältige Möglichkeiten, Wissen zu
-                  vertiefen.
-                </p>,
-              ]}
+              title={t("landing.sections.studySpace.title")}
+              content={[t("landing.sections.studySpace.content")]}
             />
             <ArticleSection
-              title="Digitale Angebote"
-              content={[
-                <p>
-                  Neben einem umfangreichen Medienbestand bietet die Bibliothek
-                  zahlreiche digitale Services: Online-Kataloge, E‑Books,
-                  Datenbanken und Tools zur wissenschaftlichen Recherche. Diese
-                  Angebote ermöglichen flexibles, ortsunabhängiges Arbeiten und
-                  unterstützen Sie bei Studium, Forschung und Projekten.
-                </p>,
-              ]}
+              title={t("landing.sections.digital.title")}
+              content={[t("landing.sections.digital.content")]}
             />
 
             <ArticleSection
-              title="Community und Veranstaltungen"
-              content={[
-                <p>
-                  Als Treffpunkt für Wissensinteressierte veranstaltet die
-                  Bibliothek regelmäßig Workshops, Lesungen und
-                  Informationsangebote. Die offenen Räume fördern Austausch,
-                  Zusammenarbeit und gemeinsames Lernen – sowohl für Studierende
-                  als auch für externe Gäste.
-                </p>,
-              ]}
+              title={t("landing.sections.community.title")}
+              content={[t("landing.sections.community.content")]}
             />
 
             <FoodRules />

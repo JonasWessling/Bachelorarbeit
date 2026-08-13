@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/">My App</Link>
+        <Link to="/">{t("appName")}</Link>
       </div>
 
       <ul className="navbar-menu">
@@ -81,7 +81,7 @@ const Navbar = () => {
       <button
         className="navbar-icon-button"
         onClick={toggleTheme}
-        aria-label="Toggle dark mode"
+        aria-label={t("toggleDarkMode")}
         title={t("toggleDarkMode")}
       >
         {icon()}

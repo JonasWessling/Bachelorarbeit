@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "../provider/ThemeProvider.jsx";
 
 const FoodRules = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const { theme } = useTheme();
 
   const lang = i18n.language.startsWith("de") ? "de" : "en";
@@ -34,11 +34,11 @@ const FoodRules = () => {
   return (
     <div>
       <div className="is-width-40-percent">
-        <h2 className="title">Essensregeln</h2>
+        <h2 className="title">{t("foodRules")}</h2>
       </div>
       <div style={{ width: "350px" }} className="is-flex is-gap-2 mt-5">
-        <img src={current.allowed} alt="Allowed Food Rules" />
-        <img src={current.forbidden} alt="Forbidden Food Rules" />
+        <img src={current.allowed} alt={t("foodRulesAllowedAlt")} />
+        <img src={current.forbidden} alt={t("foodRulesForbiddenAlt")} />
       </div>
     </div>
   );

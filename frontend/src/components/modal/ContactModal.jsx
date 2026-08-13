@@ -14,7 +14,7 @@ const ContactModal = ({ onClose }) => {
     <div>
       <div className="modal-header">
         <h1>{t("contactForm")}</h1>
-        <button onClick={handleClose} aria-label="close">
+        <button onClick={handleClose} aria-label={t("close")}>
           <CloseIcon />
         </button>
       </div>

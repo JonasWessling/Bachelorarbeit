@@ -11,6 +11,12 @@ const SearchBar = () => {
 
   const clearQuery = () => setQuery("");
 
+  const handleClick = () => {
+    const q = query.toLowerCase().trim().replace(" ", "+");
+    console.log(q);
+    navigate(`/books?q=${q}`);
+  };
+
   return (
     <div
       className="searchbar mt-3 mb-6 is-flex is-align-items-center"
@@ -19,17 +25,18 @@ const SearchBar = () => {
       <div className="search-input-wrapper">
         <input
           type="text"
-          aria-label="Search"
+          aria-label={t("search")}
           placeholder={t("search")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleClick()}
         />
 
         {query.length > 0 && (
           <button
             className="clear-btn"
             onClick={clearQuery}
-            aria-label="Clear input"
+            aria-label={t("clearInput")}
           >
             <ClearIcon aria-hidden="true" />
           </button>
@@ -38,8 +45,8 @@ const SearchBar = () => {
 
       <button
         className="search-btn"
-        onClick={() => navigate("/books")}
-        aria-label="Search"
+        onClick={handleClick}
+        aria-label={t("search")}
       >
         <SearchIcon aria-hidden="true" />
       </button>
