@@ -1,4 +1,6 @@
 export async function loadBooks(query, locale) {
+  console.log(locale);
+
   const response = await fetch(
     `http://localhost:8080/api/search?query=${encodeURIComponent(query)}`,
     {

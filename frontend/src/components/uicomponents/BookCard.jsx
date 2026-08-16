@@ -6,8 +6,6 @@ import { Themes, useTheme } from "../../provider/ThemeProvider.jsx";
 const BookCard = ({ book }) => {
   const [image, setImage] = useState("/placeholder.svg");
 
-  console.log(book);
-
   useEffect(() => {
     let cancelled = false;
 

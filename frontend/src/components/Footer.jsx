@@ -15,10 +15,6 @@ const Footer = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(i18n.resolvedLanguage);
-  }, [i18n.language]);
-
   const toggleEasyLanguage = () => {
     const lang = i18n.language;
     const [base, variant] = lang.split("-"); // z.B. ["de", "ES"]

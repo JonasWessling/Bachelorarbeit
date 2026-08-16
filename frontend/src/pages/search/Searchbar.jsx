@@ -13,7 +13,6 @@ const SearchBar = () => {
 
   const handleClick = () => {
     const q = query.toLowerCase().trim().replace(" ", "+");
-    console.log(q);
     navigate(`/books?q=${q}`);
   };
 

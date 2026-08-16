@@ -16,20 +16,30 @@ const BookPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!query) {
-      setBooks([]);
-      setError(null);
-      return;
+    if (query) {
+      fetchBooks(query, i18n.resolvedLanguage);
     }
+  }, [query]);
 
-    fetchBooks();
-  }, [query, i18n.language]);
+  useEffect(() => {
+    const handler = (lng) => {
+      if (query) {
+        fetchBooks(query, lng);
+      }
+    };
 
-  const fetchBooks = () => {
+    i18n.on("languageChanged", handler);
+
+    return () => {
+      i18n.off("languageChanged", handler);
+    };
+  }, [query]);
+
+  const fetchBooks = (query, locale) => {
     setLoading(true);
     setError(null);
 
-    loadBooks(query, i18n.language)
+    loadBooks(query, locale)
       .then((data) => {
         setBooks(data.results || []);
       })
