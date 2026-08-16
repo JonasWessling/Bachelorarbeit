@@ -3,12 +3,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import Dropdown from "../uicomponents/inputs/Dropdown.jsx";
 import { useEffect, useRef, useState } from "react";
 import Checkbox from "../uicomponents/inputs/Checkbox.jsx";
+import { Themes, useTheme } from "../../provider/ThemeProvider.jsx";
 
 const defaultSettings = {
   fontSize: "16px",
   fontFamily: "Arial, sans-serif",
   lineHeight: "1.5",
-  highContrast: false,
 };
 
 const loadSettings = () => {
@@ -39,13 +39,15 @@ const applySettings = (settings) => {
     "--line-height",
     settings.lineHeight,
   );
-  document.body.classList.toggle("high-contrast", settings.highContrast);
 };
 
 const FontMenuModal = ({ onClose }) => {
+  const { theme, setTheme } = useTheme();
   const { t } = useTranslation();
   const [settings, setSettings] = useState(loadSettings);
   const modalRootRef = useRef(null);
+
+  const [contrast, setContrast] = useState(theme === Themes.HighContrast);
 
   useEffect(() => {
     applySettings(loadSettings());
@@ -57,25 +59,24 @@ const FontMenuModal = ({ onClose }) => {
       return undefined;
     }
 
-    modalContentElement.classList.toggle(
-      "high-contrast-preview",
-      settings.highContrast,
-    );
+    modalContentElement.classList.toggle("high-contrast-preview", contrast);
 
-    modalContentElement.classList.toggle(
-      "normal-contrast-preview",
-      !settings.highContrast,
-    );
+    modalContentElement.classList.toggle("normal-contrast-preview", !contrast);
 
     return () => {
       modalContentElement.classList.remove("high-contrast-preview");
       modalContentElement.classList.remove("normal-contrast-preview");
     };
-  }, [settings.highContrast]);
+  }, [contrast]);
 
   const saveSettings = () => {
     localStorage.setItem("fontSettings", JSON.stringify(settings));
     applySettings(settings);
+    if (contrast) {
+      setTheme(Themes.HighContrast);
+    } else {
+      setTheme(Themes.LightMode);
+    }
     onClose?.();
   };
 
@@ -150,8 +151,8 @@ const FontMenuModal = ({ onClose }) => {
             <Checkbox
               id="high-contrast"
               label={t("highContrast")}
-              checked={settings.highContrast}
-              onChange={(checked) => updateSettings("highContrast", checked)}
+              checked={contrast}
+              onChange={(checked) => setContrast(checked)}
             />
           </div>
         </div>

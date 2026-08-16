@@ -9,36 +9,23 @@ export const Themes = Object.freeze({
 });
 
 export const ThemeProvider = ({ children }) => {
-  const savedSettings = localStorage.getItem("fontSettings");
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("theme");
     return saved || Themes.LightMode;
   });
 
-  const prevTheme = useRef(theme);
-
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", theme === Themes.DarkMode);
+    document.body.classList.remove("dark-mode", "high-contrast");
+
+    if (theme === Themes.DarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+    if (theme === Themes.HighContrast) {
+      document.body.classList.add("high-contrast");
+    }
+
     localStorage.setItem("theme", theme);
-
-    if (prevTheme.current !== theme) {
-      handleHighContrast();
-    }
-    prevTheme.current = theme;
   }, [theme]);
-
-  const handleHighContrast = () => {
-    try {
-      if (savedSettings) {
-        const settings = JSON.parse(savedSettings);
-        settings.highContrast = false;
-        localStorage.setItem("fontSettings", JSON.stringify(settings));
-      }
-    } catch (error) {
-      console.error("Error loading font settings:", error);
-    }
-    document.body.classList.toggle("high-contrast", false);
-  };
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
