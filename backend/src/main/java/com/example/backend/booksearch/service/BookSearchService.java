@@ -77,9 +77,18 @@ public class BookSearchService {
             url = "https:" + url;
         }
 
+        String id = "";
+        JsonNode idNode = result.path("number_lccn");
+        if (idNode.isArray()) {
+            for (JsonNode entry : idNode) {
+                id = entry.asText(null);
+                break; // Use the first available ID
+            }
+        }
+
 
         return new Book(
-                result.path("number_lccn").get(0).asText(),
+                id,
                 result.path("title").asText(null),
                 result.path("date").asText(null),
                 description,

@@ -6,12 +6,7 @@ import { Themes, useTheme } from "../../provider/ThemeProvider.jsx";
 const BookCard = ({ book }) => {
   const [image, setImage] = useState("/placeholder.svg");
 
-  const style = {
-    height: "16px",
-    width: "40%",
-    borderRadius: "4px",
-    marginBottom: "16px",
-  };
+  console.log(book);
 
   useEffect(() => {
     let cancelled = false;
