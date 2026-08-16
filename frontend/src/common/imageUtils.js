@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const PLACEHOLDER_IMAGE = "/placeholder.svg";
 
 const checkImage = (url) => {
@@ -18,3 +20,10 @@ export const getValidImage = async (images = []) => {
 
   return PLACEHOLDER_IMAGE;
 };
+
+export function extractTitle(title) {
+  const { t } = useTranslation();
+
+  const titles = title.split(":");
+  return t("bookPage.bookCover") + ": " + titles[0].trim() ?? "Book cover";
+}

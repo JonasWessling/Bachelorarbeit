@@ -79,7 +79,7 @@ public class BookSearchService {
 
 
         return new Book(
-                result.path("id").asText(null),
+                result.path("number_lccn").asText(null),
                 result.path("title").asText(null),
                 result.path("date").asText(null),
                 description,

@@ -1,18 +1,30 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
+
+export const Themes = Object.freeze({
+  DarkMode: "dark",
+  LightMode: "light",
+  HighContrast: "highContrast",
+});
 
 export const ThemeProvider = ({ children }) => {
   const savedSettings = localStorage.getItem("fontSettings");
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("theme");
-    return saved || "light";
+    return saved || Themes.LightMode;
   });
 
+  const prevTheme = useRef(theme);
+
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", theme === "dark");
+    document.body.classList.toggle("dark-mode", theme === Themes.DarkMode);
     localStorage.setItem("theme", theme);
-    handleHighContrast();
+
+    if (prevTheme.current !== theme) {
+      handleHighContrast();
+    }
+    prevTheme.current = theme;
   }, [theme]);
 
   const handleHighContrast = () => {

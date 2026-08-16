@@ -90,7 +90,8 @@
   "youtube": "YouTube",
   "bookPage": {
     "title": "Book page",
-    "description": "This is the book page."
+    "description": "This is the book page.",
+    "bookCover": "Book cover"
   },
   "landing": {
     "hero": {

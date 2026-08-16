@@ -59,7 +59,11 @@ const BookPage = () => {
       )}
 
       {books.map((book) => (
-        <BookCard key={book.id || `${book.title}-${book.date}`} book={book} />
+        <BookCard
+          key={book.id || `${book.title}-${book.date}`}
+          book={book}
+          loading={loading}
+        />
       ))}
     </div>
   );
