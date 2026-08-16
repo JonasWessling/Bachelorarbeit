@@ -1,0 +1,154 @@
+{
+  "login": "Anmelden",
+  "logout": "Abmelden",
+  "loginFailed": "Anmeldung fehlgeschlagen. Bitte prüfe deine E-Mail und dein Passwort.",
+  "changeLanguage": "Sprache ändern",
+  "changeDisplaySettings": "Ansicht ändern",
+  "toggleDarkMode": "Dunkelmodus an/aus",
+  "close": "Schließen",
+  "appName": "Meine App",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "invalidEmail": "Bitte gib eine gültige E-Mail ein.",
+  "emailMismatch": "Die E-Mails sind nicht gleich.",
+  "passwordMismatch": "Die Passwörter sind nicht gleich.",
+  "register": "Registrieren",
+  "forgotPassword": "Passwort vergessen?",
+  "resetPassword": "Passwort neu setzen",
+  "username": "Name",
+  "email_confirm": "E-Mail bestätigen",
+  "password_confirm": "Passwort bestätigen",
+  "english": "Englisch",
+  "german": "Deutsch",
+
+  "displaySettings": "Ansicht",
+  "fontSize": "Schriftgröße",
+  "fontFamily": "Schriftart",
+  "lineHeight": "Zeilenabstand",
+  "highContrast": "Hoher Kontrast",
+  "previewTitle": "Vorschau",
+  "previewText": "Dieser Beispieltext zeigt dir, wie deine Einstellungen aussehen.",
+  "save": "Speichern",
+  "cancel": "Abbrechen",
+  "reset": "Zurücksetzen",
+  "back": "Zurück",
+  "goHome": "Zur Startseite",
+  "home": "Startseite",
+  "clearInput": "Eingabe löschen",
+  "moreResults": "Mehr Ergebnisse",
+
+  "pageNotFound": "Seite nicht gefunden.",
+
+  "small": "Klein",
+  "medium": "Mittel",
+  "default": "Normal",
+  "large": "Groß",
+  "extraLarge": "Sehr groß",
+
+  "here": "hier",
+
+  "search": "Suche...",
+
+  "email_placeholder": "beispiel@mail.de",
+  "tel_placeholder": "0123456789",
+  "text_area_placeholder": "Schreibe deine Nachricht...",
+  "phone_number": "Telefonnummer",
+  "message": "Nachricht",
+  "error": "Es gab einen Fehler. Bitte versuche es später noch einmal. Wenn du Hilfe brauchst, kontaktiere den Support.",
+
+  "simpleLanguage": "Einfache Sprache",
+  "imprint": "Impressum",
+  "privacyPolicy": "Datenschutz",
+  "termsOfService": "Regeln der Nutzung",
+  "contact": "Kontakt",
+  "send": "Senden",
+  "sendMessage": "Nachricht senden",
+  "contactForm": "Kontaktformular",
+
+  "openingHours": "Öffnungszeiten",
+  "socialMedia": "Soziale Medien",
+  "monday": "Montag",
+  "tuesday": "Dienstag",
+  "wednesday": "Mittwoch",
+  "thursday": "Donnerstag",
+  "friday": "Freitag",
+  "saturday": "Samstag",
+  "sunday": "Sonntag",
+  "closed": "Geschlossen",
+
+  "noAccount": "Du hast noch kein Konto? Jetzt <1>hier</1> registrieren.",
+  "inquiry_address": "Deine Anfrage an: email@email.com",
+  "inquiry_text": "Bitte schreibe deine Anfrage. Wir melden uns schnell bei dir.",
+
+  "news": "Neuigkeiten",
+  "more_news": "Alle Neuigkeiten",
+  "moreInfo": "Mehr Infos",
+  "foodRules": "Essensregeln",
+  "foodRulesAllowedAlt": "Erlaubte Regeln",
+  "foodRulesForbiddenAlt": "Verbotene Regeln",
+  "telephone": "Telefon",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "youtube": "YouTube",
+
+  "bookPage": {
+    "title": "Ergebnisse für: {{searchTerm}}",
+    "bookCover": "Buchcover",
+    "resultAmount": "{{count}} Ergebnisse",
+    "noResults": "Keine Ergebnisse."
+  },
+
+  "landing": {
+    "hero": {
+      "eyebrow": "Willkommen",
+      "title": "Bibliothek – Lernen, Suchen, Treffen",
+      "text": "Hier findest du digitale Angebote, ruhige Plätze zum Lernen und Veranstaltungen.",
+      "searchCatalog": "Katalog suchen",
+      "learnMore": "Mehr Infos"
+    },
+    "stats": {
+      "media": "Medien",
+      "digital": "Digital",
+      "studySeats": "Lernplätze"
+    },
+    "sections": {
+      "about": {
+        "title": "Über die Bibliothek",
+        "content": "Die Bibliothek bietet Bücher, digitale Angebote und ruhige Plätze zum Arbeiten."
+      },
+      "studySpace": {
+        "title": "Lernort",
+        "content": "Die Bibliothek ist ruhig. Du kannst gut lernen und arbeiten."
+      },
+      "digital": {
+        "title": "Digitale Angebote",
+        "content": "Du findest Online-Kataloge, E‑Books und Datenbanken für deine Arbeit."
+      },
+      "community": {
+        "title": "Gemeinschaft und Veranstaltungen",
+        "content": "Es gibt Workshops, Lesungen und Treffen für alle."
+      }
+    }
+  },
+
+  "newsCategories": {
+    "announcement": "Ankündigung",
+    "news": "Neuigkeit",
+    "notice": "Hinweis"
+  },
+
+  "newsItems": {
+    "openingHours": {
+      "title": "Neue Öffnungszeiten",
+      "content": "Ab September sind wir länger offen: Montag bis Freitag 08:00–22:00."
+    },
+    "digitalCollection": {
+      "title": "Digitale Sammlung größer",
+      "content": "Wir haben viele neue E‑Books und Journals hinzugefügt."
+    },
+    "holiday": {
+      "title": "Schöne Ferien!",
+      "content": "Die Bibliothek ist vom 15.08 bis 22.08 geschlossen."
+    }
+  }
+}

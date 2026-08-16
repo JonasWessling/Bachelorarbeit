@@ -16,7 +16,7 @@ const App = () => {
         .changeLanguage(prefLang)
         .then(() => (document.documentElement.lang = prefLang));
     }
-  });
+  }, []);
 
   return (
     <BrowserRouter>

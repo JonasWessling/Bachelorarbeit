@@ -35,6 +35,7 @@
   "goHome": "Go home",
   "home": "Home",
   "clearInput": "Clear input",
+  "moreResults": "Show more results",
 
   "pageNotFound": "Oops! Page not found.",
 
@@ -53,6 +54,7 @@
   "text_area_placeholder": "Enter your message...",
   "phone_number": "Phone number",
   "message": "Message",
+  "error": "Something went wrong. Please try again later or contact support.",
 
   "simpleLanguage": "Simple Language",
   "imprint": "Imprint",
@@ -89,9 +91,10 @@
   "instagram": "Instagram",
   "youtube": "YouTube",
   "bookPage": {
-    "title": "Book page",
-    "description": "This is the book page.",
-    "bookCover": "Book cover"
+    "title": "Results for your search: {{searchTerm}}",
+    "bookCover": "Book cover",
+    "resultAmount": "{{count}} results found",
+    "noResults": "No results found for your search."
   },
   "landing": {
     "hero": {

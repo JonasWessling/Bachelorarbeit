@@ -3,9 +3,10 @@ import { Link } from "react-router";
 import { eventBus } from "../event/eventbus.js";
 import ModalConstants from "../assets/constants/ModalConstants.json";
 import EventConstants from "../assets/constants/EventConstants.json";
+import { useEffect } from "react";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const openContactModal = () => {
     eventBus.emit(ModalConstants.OpenModal, {
@@ -14,19 +15,31 @@ const Footer = () => {
     });
   };
 
+  useEffect(() => {
+    console.log(i18n.resolvedLanguage);
+  }, [i18n.language]);
+
+  const toggleEasyLanguage = () => {
+    const lang = i18n.language;
+    const [base, variant] = lang.split("-"); // z.B. ["de", "ES"]
+
+    const next = variant === "ES" ? base : `${base}-ES`;
+    i18n.changeLanguage(next);
+  };
+
   return (
     <div className="custom-footer">
       <div className="custom-footer-item">
-        <Link to="/simple-language">{t("simpleLanguage")}</Link>
+        <button onClick={toggleEasyLanguage}>{t("simpleLanguage")}</button>
       </div>
       <div className="custom-footer-item">
-        <Link to="/imprint">{t("imprint")}</Link>
+        <Link to="#">{t("imprint")}</Link>
       </div>
       <div className="custom-footer-item">
-        <Link to="/privacy-policy">{t("privacyPolicy")}</Link>
+        <Link to="#">{t("privacyPolicy")}</Link>
       </div>
       <div className="custom-footer-item">
-        <Link to="/terms-of-service">{t("termsOfService")}</Link>
+        <Link to="#">{t("termsOfService")}</Link>
       </div>
       <div className="custom-footer-item">
         <button onClick={openContactModal}>{t("contact")}</button>

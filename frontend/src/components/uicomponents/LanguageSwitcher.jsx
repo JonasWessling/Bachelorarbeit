@@ -48,7 +48,7 @@ const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <LanguageIcon />
-        {i18n.language.toUpperCase()}
+        {i18n.language.split("-")[0].toUpperCase()}
         <svg
           className="languageDropdown__chevron"
           width="16"

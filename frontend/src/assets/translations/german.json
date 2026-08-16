@@ -35,6 +35,7 @@
   "goHome": "Zur Startseite",
   "home": "Startseite",
   "clearInput": "Eingabe löschen",
+  "moreResults": "Weitere Ergebnisse anzeigen",
 
   "pageNotFound": "Hoppla! Seite nicht gefunden.",
 
@@ -53,6 +54,7 @@
   "text_area_placeholder": "Geben Sie Ihre Nachricht ein...",
   "phone_number": "Telefonnummer",
   "message": "Nachricht",
+  "error": "Etwas ist schief gelaufen. Bitte versuche es später erneut oder kontaktiere den Support.",
 
   "simpleLanguage": "Einfache Sprache",
   "imprint": "Impressum",
@@ -89,9 +91,10 @@
   "instagram": "Instagram",
   "youtube": "YouTube",
   "bookPage": {
-    "title": "Buchseite",
-    "description": "Dies ist die Buchseite.",
-    "bookCover": "Buchcover"
+    "title": "Ergebnisse für deine Suche zu: {{searchTerm}}",
+    "bookCover": "Buchcover",
+    "resultAmount": "{{count}} Ergebnisse gefunden",
+    "noResults": "Keine Ergebnisse gefunden."
   },
   "landing": {
     "hero": {

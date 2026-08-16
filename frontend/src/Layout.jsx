@@ -1,8 +1,9 @@
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import { routes } from "./routes.jsx";
 import Footer from "./components/Footer.jsx";
+import { useTranslation } from "react-i18next";
 
 const Layout = () => {
   const location = useLocation();
@@ -15,6 +16,15 @@ const Layout = () => {
   useEffect(() => {
     handleLoadSettingsOnMount();
   }, []);
+
+  const { lng } = useParams();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lng && i18n.language !== lng) {
+      i18n.changeLanguage(lng);
+    }
+  }, [lng, i18n]);
 
   const handleLoadSettingsOnMount = () => {
     try {

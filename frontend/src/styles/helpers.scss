@@ -79,3 +79,8 @@
   border: 1px solid var(--border-color);
   box-shadow: 0 0 2px var(--border-color);
 }
+
+.unstyled-link {
+  text-decoration: none;
+  color: inherit;
+}

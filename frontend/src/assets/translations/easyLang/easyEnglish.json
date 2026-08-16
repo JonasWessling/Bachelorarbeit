@@ -1,0 +1,154 @@
+{
+  "login": "Log in",
+  "logout": "Log out",
+  "loginFailed": "Login failed. Please check your email and password.",
+  "changeLanguage": "Change language",
+  "changeDisplaySettings": "Change view",
+  "toggleDarkMode": "Dark mode on/off",
+  "close": "Close",
+  "appName": "My App",
+  "email": "Email",
+  "password": "Password",
+  "invalidEmail": "Please enter a valid email.",
+  "emailMismatch": "The emails do not match.",
+  "passwordMismatch": "The passwords do not match.",
+  "register": "Register",
+  "forgotPassword": "Forgot password?",
+  "resetPassword": "Reset password",
+  "username": "Name",
+  "email_confirm": "Confirm email",
+  "password_confirm": "Confirm password",
+  "english": "English",
+  "german": "German",
+
+  "displaySettings": "View",
+  "fontSize": "Font size",
+  "fontFamily": "Font style",
+  "lineHeight": "Line height",
+  "highContrast": "High contrast",
+  "previewTitle": "Preview",
+  "previewText": "This text shows how your settings look.",
+  "save": "Save",
+  "cancel": "Cancel",
+  "reset": "Reset",
+  "back": "Back",
+  "goHome": "Go to home",
+  "home": "Home",
+  "clearInput": "Clear input",
+  "moreResults": "More results",
+
+  "pageNotFound": "Page not found.",
+
+  "small": "Small",
+  "medium": "Medium",
+  "default": "Normal",
+  "large": "Large",
+  "extraLarge": "Extra large",
+
+  "here": "here",
+
+  "search": "Search...",
+
+  "email_placeholder": "example@mail.com",
+  "tel_placeholder": "0123456789",
+  "text_area_placeholder": "Write your message...",
+  "phone_number": "Phone number",
+  "message": "Message",
+  "error": "Something is not working right now. Please try again later. You can also ask support for help..",
+
+  "simpleLanguage": "Simple Language",
+  "imprint": "Imprint",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfService": "Terms of Use",
+  "contact": "Contact",
+  "send": "Send",
+  "sendMessage": "Send message",
+  "contactForm": "Contact form",
+
+  "openingHours": "Opening hours",
+  "socialMedia": "Social media",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "closed": "Closed",
+
+  "noAccount": "You do not have an account yet? Register <1>here</1>.",
+  "inquiry_address": "Your request to: email@email.com",
+  "inquiry_text": "Please write your request. We will answer as soon as possible.",
+
+  "news": "News",
+  "more_news": "All news",
+  "moreInfo": "More info",
+  "foodRules": "Food rules",
+  "foodRulesAllowedAlt": "Allowed rules",
+  "foodRulesForbiddenAlt": "Forbidden rules",
+  "telephone": "Phone",
+  "facebook": "Facebook",
+  "instagram": "Instagram",
+  "youtube": "YouTube",
+
+  "bookPage": {
+    "title": "Results for: {{searchTerm}}",
+    "bookCover": "Book cover",
+    "resultAmount": "{{count}} results",
+    "noResults": "No results."
+  },
+
+  "landing": {
+    "hero": {
+      "eyebrow": "Welcome",
+      "title": "Library – Learn, Search, Meet",
+      "text": "Here you find digital offers, quiet places to study, and events.",
+      "searchCatalog": "Search catalog",
+      "learnMore": "More info"
+    },
+    "stats": {
+      "media": "Media",
+      "digital": "Digital",
+      "studySeats": "Study seats"
+    },
+    "sections": {
+      "about": {
+        "title": "About the library",
+        "content": "The library has books, digital offers, and quiet places to work."
+      },
+      "studySpace": {
+        "title": "Study space",
+        "content": "The library is quiet. You can learn and work well."
+      },
+      "digital": {
+        "title": "Digital offers",
+        "content": "You find online catalogs, e-books, and databases for your work."
+      },
+      "community": {
+        "title": "Community and events",
+        "content": "There are workshops, readings, and meetings for everyone."
+      }
+    }
+  },
+
+  "newsCategories": {
+    "announcement": "Announcement",
+    "news": "News",
+    "notice": "Notice"
+  },
+
+  "newsItems": {
+    "openingHours": {
+      "title": "New opening hours",
+      "content": "From September we are open longer: Monday to Friday 08:00–22:00."
+    },
+    "digitalCollection": {
+      "title": "Digital collection bigger",
+      "content": "We added many new e-books and journals."
+    },
+    "holiday": {
+      "title": "Happy holidays!",
+      "content": "The library is closed from 15.08 to 22.08."
+    }
+  }
+}
