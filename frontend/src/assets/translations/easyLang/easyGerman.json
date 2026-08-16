@@ -95,7 +95,8 @@
     "title": "Ergebnisse für: {{searchTerm}}",
     "bookCover": "Buchcover",
     "resultAmount": "{{count}} Ergebnisse",
-    "noResults": "Keine Ergebnisse."
+    "noResults": "Keine Ergebnisse.",
+    "noDescription": "Es gibt keine Beschreibung."
   },
 
   "landing": {

@@ -94,7 +94,8 @@
     "title": "Ergebnisse für deine Suche zu: {{searchTerm}}",
     "bookCover": "Buchcover",
     "resultAmount": "{{count}} Ergebnisse gefunden",
-    "noResults": "Keine Ergebnisse gefunden."
+    "noResults": "Keine Ergebnisse gefunden.",
+    "noDescription": "Keine Beschreibung verfügbar."
   },
   "landing": {
     "hero": {
