@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="custom-footer">
+    <footer className="custom-footer">
       <div className="custom-footer-item">
         <button onClick={toggleEasyLanguage}>{t("simpleLanguage")}</button>
       </div>
@@ -40,7 +40,7 @@ const Footer = () => {
       <div className="custom-footer-item">
         <button onClick={openContactModal}>{t("contact")}</button>
       </div>
-    </div>
+    </footer>
   );
 };
 
