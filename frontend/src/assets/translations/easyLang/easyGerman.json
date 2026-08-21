@@ -83,9 +83,32 @@
   "news": "Neuigkeiten",
   "more_news": "Alle Neuigkeiten",
   "moreInfo": "Mehr Infos",
-  "foodRules": "Essensregeln",
-  "foodRulesAllowedAlt": "Erlaubte Regeln",
-  "foodRulesForbiddenAlt": "Verbotene Regeln",
+  "foodRules": {
+    "title": "Regeln für Essen",
+    "allowedTitle": "Erlaubt",
+    "forbiddenTitle": "Verboten",
+
+    "allowed": {
+      "fingerfood": "Essen mit den Fingern",
+      "sweets": "Süßigkeiten",
+      "granola": "Müsliriegel",
+      "fruits": "Obst",
+      "nuts": "Nüsse",
+      "bread": "Brot und Gebäck",
+      "nonAlcoholic": "Getränke ohne Alkohol in Flaschen"
+    },
+
+    "forbidden": {
+      "warm": "Warme Speisen",
+      "cans": "Getränke in Dosen oder Bechern",
+      "yogurt": "Joghurt",
+      "icecream": "Eis",
+      "pizza": "Pizza",
+      "sticky": "Klebriges oder fettiges Essen",
+      "smelly": "Essen mit starkem Geruch"
+    }
+  },
+
   "telephone": "Telefon",
   "facebook": "Facebook",
   "instagram": "Instagram",

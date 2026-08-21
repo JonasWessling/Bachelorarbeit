@@ -83,9 +83,32 @@
   "news": "News",
   "more_news": "All news",
   "moreInfo": "More info",
-  "foodRules": "Food rules",
-  "foodRulesAllowedAlt": "Allowed rules",
-  "foodRulesForbiddenAlt": "Forbidden rules",
+  "foodRules": {
+    "title": "Food rules",
+    "allowedTitle": "Allowed",
+    "forbiddenTitle": "Not allowed",
+
+    "allowed": {
+      "fingerfood": "Food you can eat with your fingers",
+      "sweets": "Sweet snacks",
+      "granola": "Granola bars",
+      "fruits": "Fruit",
+      "nuts": "Nuts",
+      "bread": "Bread and pastries",
+      "nonAlcoholic": "Non-alcoholic drinks in bottles"
+    },
+
+    "forbidden": {
+      "warm": "Warm food",
+      "cans": "Drinks in cans or cups",
+      "yogurt": "Yogurt",
+      "icecream": "Ice cream",
+      "pizza": "Pizza",
+      "sticky": "Sticky or oily food",
+      "smelly": "Food with a strong smell"
+    }
+  },
+
   "telephone": "Phone",
   "facebook": "Facebook",
   "instagram": "Instagram",

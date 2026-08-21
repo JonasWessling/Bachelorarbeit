@@ -25,6 +25,26 @@ const FoodRules = () => {
     }
   };
 
+  const allowedLabels = [
+    t("foodRules.allowed.fingerfood"),
+    t("foodRules.allowed.sweets"),
+    t("foodRules.allowed.granola"),
+    t("foodRules.allowed.fruits"),
+    t("foodRules.allowed.nuts"),
+    t("foodRules.allowed.bread"),
+    t("foodRules.allowed.nonAlcoholic"),
+  ];
+
+  const forbiddenLabels = [
+    t("foodRules.forbidden.warm"),
+    t("foodRules.forbidden.cans"),
+    t("foodRules.forbidden.yogurt"),
+    t("foodRules.forbidden.icecream"),
+    t("foodRules.forbidden.pizza"),
+    t("foodRules.forbidden.sticky"),
+    t("foodRules.forbidden.smelly"),
+  ];
+
   const [allowed, setAllowed] = useState(null);
   const [forbidden, setForbidden] = useState(null);
 
@@ -34,15 +54,34 @@ const FoodRules = () => {
   }, [theme, lang]);
 
   return (
-    <div>
-      <div className="is-width-40-percent">
-        <h2 className="title">{t("foodRules")}</h2>
+    <>
+      <div className="is-flex is-flex-direction-row is-gap-2 is-align-items-center">
+        <div style={{ width: "350px" }}>
+          <img src={allowed} alt="" />
+        </div>
+
+        <div className="food-rules-block allowed">
+          <ul>
+            {allowedLabels.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div style={{ width: "350px" }} className="is-flex is-gap-2 mt-5">
-        <img src={allowed} alt={t("foodRulesAllowedAlt")} />
-        <img src={forbidden} alt={t("foodRulesForbiddenAlt")} />
+      <div className="is-flex is-flex-direction-row is-gap-2 is-align-items-center">
+        <div style={{ width: "350px" }}>
+          <img src={forbidden} alt="" />
+        </div>
+
+        <div className="food-rules-block forbidden">
+          <ul>
+            {forbiddenLabels.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

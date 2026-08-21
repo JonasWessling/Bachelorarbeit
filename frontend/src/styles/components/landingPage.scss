@@ -133,3 +133,34 @@
     width: 100%;
   }
 }
+
+.food-rules-section {
+  margin-top: 2rem;
+}
+
+.food-rules-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.food-rules-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.food-rules-block li {
+  margin: 0 0 0.25rem 0;
+}
+
+/* Theme-friendly colors */
+.allowed {
+  border-left: 4px solid var(--success-color, #3aa76d);
+  padding-left: 1rem;
+}
+
+.forbidden {
+  border-left: 4px solid var(--danger-color, #d9534f);
+  padding-left: 1rem;
+}
