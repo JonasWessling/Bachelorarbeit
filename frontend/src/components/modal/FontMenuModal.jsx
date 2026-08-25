@@ -48,9 +48,11 @@ const FontMenuModal = ({ onClose }) => {
   const modalRootRef = useRef(null);
 
   const [contrast, setContrast] = useState(theme === Themes.HighContrast);
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
     applySettings(loadSettings());
+    closeButtonRef.current?.focus();
   }, []);
 
   useEffect(() => {
@@ -99,7 +101,11 @@ const FontMenuModal = ({ onClose }) => {
     <div ref={modalRootRef}>
       <div className="modal-header">
         <h1>{t("displaySettings")}</h1>
-        <button onClick={handleClose} aria-label={t("close")}>
+        <button
+          onClick={handleClose}
+          aria-label={t("close")}
+          ref={closeButtonRef}
+        >
           <CloseIcon />
         </button>
       </div>

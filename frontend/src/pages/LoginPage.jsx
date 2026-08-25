@@ -109,7 +109,10 @@ const LoginPage = () => {
           </div>
         </form>
         <div className="login-footer">
-          <Trans i18nKey="noAccount" components={[<Link to="/register" />]} />
+          <Trans
+            i18nKey="noAccount"
+            components={{ 1: <Link to="/register" /> }}
+          />
         </div>
       </div>
     </div>

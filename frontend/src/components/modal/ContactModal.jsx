@@ -2,9 +2,15 @@ import { useTranslation } from "react-i18next";
 import CloseIcon from "@mui/icons-material/Close";
 import InputField from "../uicomponents/inputs/InputField.jsx";
 import TextArea from "../uicomponents/inputs/TextArea.jsx";
+import { useEffect, useRef } from "react";
 
 const ContactModal = ({ onClose }) => {
   const { t } = useTranslation();
+  const closeButtonRef = useRef(null);
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+  }, []);
 
   const handleClose = () => {
     onClose?.();
@@ -14,7 +20,11 @@ const ContactModal = ({ onClose }) => {
     <div>
       <div className="modal-header">
         <h1>{t("contactForm")}</h1>
-        <button onClick={handleClose} aria-label={t("close")}>
+        <button
+          onClick={handleClose}
+          aria-label={t("close")}
+          ref={closeButtonRef}
+        >
           <CloseIcon />
         </button>
       </div>
