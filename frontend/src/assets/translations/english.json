@@ -76,7 +76,7 @@
   "sunday": "Sunday",
   "closed": "Closed",
 
-  "noAccount": "Don't have an account yet? Register <1>here</1>.",
+  "noAccount": "Don't have an account yet? <1>Register here</1>.",
   "inquiry_address": "Your inquiry to: email@email.com",
   "inquiry_text": "Please fill out the form below to send us your inquiry. We will get back to you as soon as possible.",
 
