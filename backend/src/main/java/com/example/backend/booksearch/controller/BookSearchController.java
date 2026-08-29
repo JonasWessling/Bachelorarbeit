@@ -2,11 +2,9 @@ package com.example.backend.booksearch.controller;
 
 import com.example.backend.booksearch.model.BookSearchResponse;
 import com.example.backend.booksearch.service.BookSearchService;
-import com.example.backend.utils.LocaleOptimizer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Locale;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
