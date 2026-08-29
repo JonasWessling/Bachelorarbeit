@@ -20,9 +20,7 @@ public class BookSearchController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<BookSearchResponse> searchBooks(@RequestParam String query, Locale locale) {
-        Locale optimizedLocale = LocaleOptimizer.optimize(locale);
-
-        return ResponseEntity.ok(bookSearchService.searchBooks(query, optimizedLocale));
+    public ResponseEntity<BookSearchResponse> searchBooks(@RequestParam String query) {
+        return ResponseEntity.ok(bookSearchService.searchBooks(query));
     }
 }

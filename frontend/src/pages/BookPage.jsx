@@ -21,20 +21,6 @@ const BookPage = () => {
     }
   }, [query]);
 
-  useEffect(() => {
-    const handler = (lng) => {
-      if (query) {
-        fetchBooks(query, lng);
-      }
-    };
-
-    i18n.on("languageChanged", handler);
-
-    return () => {
-      i18n.off("languageChanged", handler);
-    };
-  }, [query]);
-
   const fetchBooks = (query, locale) => {
     setLoading(true);
     setError(null);

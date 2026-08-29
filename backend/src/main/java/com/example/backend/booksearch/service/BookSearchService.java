@@ -2,7 +2,6 @@ package com.example.backend.booksearch.service;
 
 import com.example.backend.booksearch.model.Book;
 import com.example.backend.booksearch.model.BookSearchResponse;
-import com.example.backend.utils.LocaleOptimizer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -17,129 +16,82 @@ import java.util.Locale;
 @Service
 public class BookSearchService {
 
-    private static final String URL = "https://www.loc.gov/books/";
-
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
-
-    private String count = "&c=10";
-    private String format = "&fo=json";
 
     public BookSearchService(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
     }
 
-    public BookSearchResponse searchBooks(String searchTerm, Locale locale) {
+    public BookSearchResponse searchBooks(String searchTerm) {
 
-        String lang = "&fa=language:" + LocaleOptimizer.getUrlLangValue(locale);
-
-        String apiUrl = URL + "?q=" + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8) + lang + count + format;
-
+        int limit = 10;
+        String apiUrl = "https://openlibrary.org/search.json?q="
+                + URLEncoder.encode(searchTerm, StandardCharsets.UTF_8)
+                + "&limit=" + limit;
 
         try {
             String responseBody = restTemplate.getForObject(apiUrl, String.class);
+
             if (responseBody == null || responseBody.isBlank()) {
-                return new BookSearchResponse(null, List.of());
+                return new BookSearchResponse(List.of());
             }
 
             JsonNode root = objectMapper.readTree(responseBody);
-            JsonNode content = root.path("content");
+            JsonNode docs = root.path("docs");
+
             List<Book> books = new ArrayList<>();
 
-            for (JsonNode result : content.path("results")) {
-                books.add(mapBook(result));
+            for (JsonNode doc : docs) {
+                books.add(mapBook(doc));
             }
 
+            return new BookSearchResponse( books);
 
-            return new BookSearchResponse(content.path("pagination").asText(null), books);
         } catch (Exception e) {
             throw new RuntimeException("Error occurred while searching for books: " + e.getMessage(), e);
         }
     }
 
+    private Book mapBook(JsonNode doc) {
 
-    private Book mapBook(JsonNode result) {
-        String description = null;
-        JsonNode descriptionNode = result.path("description");
-        if (descriptionNode.isArray()) {
-            List<String> descriptions = new ArrayList<>();
-            for (JsonNode entry : descriptionNode) {
-                descriptions.add(entry.asText());
-            }
-            description = String.join(" ", descriptions);
-        } else if (!descriptionNode.isMissingNode()) {
-            description = descriptionNode.asText(null);
-        }
+        String title = doc.path("title").asText(null);
 
-        String url = result.path("url").asText(null);
-        if (url != null && url.startsWith("//")) {
-            url = "https:" + url;
-        }
+        String description = doc.path("first_sentence").asText(null);
 
-        String id = "";
-        JsonNode idNode = result.path("number_lccn");
-        if (idNode.isArray()) {
-            for (JsonNode entry : idNode) {
-                id = entry.asText(null);
-                break; // Use the first available ID
-            }
-        }
-
-
-        return new Book(
-                id,
-                result.path("title").asText(null),
-                result.path("date").asText(null),
-                description,
-                url,
-                getImages(result)
-        );
-    }
-
-
-    private List<String> getImages(JsonNode result) {
         List<String> images = new ArrayList<>();
 
-        JsonNode imagesNode = result.path("image_url");
-        if (imagesNode.isArray()) {
-            for (JsonNode entry : imagesNode) {
-                images.add(entry.asText());
-            }
+        JsonNode coverNode = doc.path("cover_i");
+        if (coverNode.isInt()) {
+            int coverId = coverNode.asInt();
+            images.add("https://covers.openlibrary.org/b/id/" + coverId + "-M.jpg");
         }
 
-        JsonNode resourceNode = result.path("resources");
-        if (resourceNode.isArray()) {
-            for (JsonNode res : resourceNode) {
-                JsonNode image = res.path("image");
-                if (image.isArray()) {
-                    for (JsonNode entry : image) {
-                        images.add(entry.asText());
-                    }
-                }
-                if (image.isTextual()) {
-                    images.add(image.asText());
-                }
-            }
+        String isbn = "";
+        JsonNode isbnNode = doc.path("lending_identifier_s");
+        if (isbnNode.isArray() && isbnNode.size() > 0) {
+            isbn = isbnNode.get(0).asText();
+            images.add("https://covers.openlibrary.org/b/isbn/" + isbn + "-M.jpg");
         }
 
-        JsonNode links = result.path("links");
-        if (links.isArray()) {
-            for (JsonNode link : links) {
-                JsonNode image = link.path("image");
-                if (!image.isMissingNode()) {
-                    images.add(image.asText());
-                }
-            }
+        String key = doc.path("key").asText(null);
+        String url = key != null ? "https://openlibrary.org" + key : null;
+
+        String publishDate = null;
+        JsonNode dateNode = doc.path("publish_date");
+        if (dateNode.isArray() && dateNode.size() > 0) {
+            publishDate = dateNode.get(0).asText();
         }
 
-        JsonNode item = result.path("item");
-        if (!item.isMissingNode()) {
-            JsonNode thumb = item.path("thumbnail");
-            if (!thumb.isMissingNode()) {
-                images.add(thumb.asText());
-            }
-        }
-        return images;
+        return new Book(
+                isbn,
+                title,
+                publishDate,
+                description,
+                url,
+                images
+        );
     }
 }
+
