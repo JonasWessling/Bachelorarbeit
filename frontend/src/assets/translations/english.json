@@ -119,7 +119,8 @@
     "bookCover": "Book cover",
     "resultAmount": "{{count}} results found",
     "noResults": "No results found for your search.",
-    "noDescription": "No description available."
+    "noDescription": "No description available.",
+    "loading": "Loading..."
   },
   "landing": {
     "hero": {

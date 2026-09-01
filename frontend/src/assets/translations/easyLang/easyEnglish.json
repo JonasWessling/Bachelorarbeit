@@ -119,7 +119,8 @@
     "bookCover": "Book cover",
     "resultAmount": "{{count}} results",
     "noResults": "No results.",
-    "noDescription": "There is no description."
+    "noDescription": "There is no description.",
+    "loading": "Loading..."
   },
 
   "landing": {

@@ -121,7 +121,8 @@
     "bookCover": "Buchcover",
     "resultAmount": "{{count}} Ergebnisse gefunden",
     "noResults": "Keine Ergebnisse gefunden.",
-    "noDescription": "Keine Beschreibung verfügbar."
+    "noDescription": "Keine Beschreibung verfügbar.",
+    "loading": "Lädt..."
   },
   "landing": {
     "hero": {

@@ -96,6 +96,16 @@ const BookPage = () => {
     );
   };
 
+  const bookResultText = () => {
+    if (loading) {
+      return t("bookPage.loading");
+    }
+    if (books.length > 0) {
+      return t("bookPage.resultAmount", { count: books.length });
+    }
+    return t("bookPage.noResults");
+  };
+
   return (
     <div className="content-padding">
       <section className="landing-hero rounded">
@@ -103,11 +113,7 @@ const BookPage = () => {
           <h1 className="is-accent-h1">
             {t("bookPage.title", { searchTerm: query })}
           </h1>
-          <p className="landing-hero__text">
-            {books.length > 0
-              ? t("bookPage.resultAmount", { count: books.length })
-              : t("bookPage.noResults")}
-          </p>
+          <p className="landing-hero__text">{bookResultText()}</p>
         </div>
       </section>
       {loading
