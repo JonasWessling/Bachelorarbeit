@@ -61,6 +61,7 @@ const FoodRules = () => {
         </div>
 
         <div className="food-rules-block allowed">
+          <h3 className="is-bold">{t("foodRules.allowedTitle")}</h3>
           <ul>
             {allowedLabels.map((item) => (
               <li key={item}>{item}</li>
@@ -74,6 +75,7 @@ const FoodRules = () => {
         </div>
 
         <div className="food-rules-block forbidden">
+          <h3 className="is-bold">{t("foodRules.forbiddenTitle")}</h3>
           <ul>
             {forbiddenLabels.map((item) => (
               <li key={item}>{item}</li>
